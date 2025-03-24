@@ -1,0 +1,37 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+
+# User-specific settings
+*.csproj
+*.sln
+*.userprefs
+*.pidb
+*.suo
+*.unityproj
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Rider and VS Code settings
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs, crash reports, and builds
+*.log
+*.crash
+
+# Ignore Play Mode test results
+Assets/Scenes/TestResults/
+
+# Ignore Packages directory (if using Unity Package Manager)
+Packages/

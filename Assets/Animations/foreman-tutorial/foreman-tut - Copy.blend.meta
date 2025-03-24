@@ -1,0 +1,3023 @@
+fileFormatVersion: 2
+guid: 4b67d0b90d68c9e4d83aad5a5a91d6c8
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Scene' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'RightFingerBase' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'LeftFingerBase' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: foreman-tut - Copy(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Light
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -4.0762453, y: 5.903862, z: -1.005454}
+      rotation: {x: 0.52327543, y: -0.34203398, z: 0.72694236, w: 0.2841663}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Camera
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -7.3588915, y: 4.958309, z: 6.925791}
+      rotation: {x: 0.09062851, y: 0.89379627, z: -0.20997299, w: 0.3857799}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Lights
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.00000014106499, y: 0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: spotLight2
+      parentName: Lights
+      position: {x: 94.1168, y: 140.1134, z: 96.929375}
+      rotation: {x: -0.029122455, y: 0.37442163, z: 0.011768347, w: 0.9267264}
+      scale: {x: 9.192585, y: 9.192641, z: 9.192621}
+    - name: spotLight3
+      parentName: Lights
+      position: {x: -87.5186, y: 137.60127, z: -70.87299}
+      rotation: {x: 0.0068165576, y: 0.94531107, z: 0.019800305, w: -0.32549733}
+      scale: {x: 9.192608, y: 9.192562, z: 9.192609}
+    - name: spotLight4
+      parentName: Lights
+      position: {x: 47.241695, y: 144.23637, z: -59.987213}
+      rotation: {x: -0.015613966, y: 0.9666716, z: 0.060816064, w: 0.24820092}
+      scale: {x: 9.192584, y: 9.19258, z: 9.192606}
+    - name: spotLight1
+      parentName: Lights
+      position: {x: -34.4522, y: 197.502, z: 93.73927}
+      rotation: {x: -0.2515289, y: -0.12792598, z: -0.033561524, w: 0.95877105}
+      scale: {x: 9.192588, y: 9.192657, z: 9.192584}
+    - name: h_R_gland
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: H_DDS_HighRes
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: h_TeethUp
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: h_L_eye
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: h_R_eye
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: h_L_gland
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: h_TeethDown
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: -0.0000000033517533, z: 2.2245275e-10}
+      rotation: {x: 0.00000006717944, y: -1.6543619e-22, z: 2.6687771e-16, w: 1}
+      scale: {x: 0.009999999, y: 0.009999997, z: 0.009999997}
+    - name: master
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.00000014106499, y: 0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Reference
+      parentName: master
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 0.9999997, z: 0.9999997}
+    - name: Hips
+      parentName: Reference
+      position: {x: -0, y: 1.8226993, z: 100.74981}
+      rotation: {x: 0.987435, y: -4.2173367e-17, z: -2.635242e-16, w: -0.15802564}
+      scale: {x: 1, y: 1, z: 1.0000021}
+    - name: Spine
+      parentName: Hips
+      position: {x: -5.2084564e-15, y: -1.2582098, z: -3.830335}
+      rotation: {x: -0.5727305, y: 0.41470465, z: -0.57273024, w: 0.41470474}
+      scale: {x: 1.0000025, y: 1.0000007, z: 1.0000015}
+    - name: Spine1
+      parentName: Spine
+      position: {x: -0.000000011852272, y: 8.063317, z: -0.000000009041116}
+      rotation: {x: 0.00731863, y: 0.08525015, z: -0.085237704, w: 0.9926799}
+      scale: {x: 1.0000007, y: 1.0000013, z: 1.0000033}
+    - name: Spine2
+      parentName: Spine1
+      position: {x: -0.00000025070727, y: 10.778689, z: 0.00000022892345}
+      rotation: {x: -0.0312283, y: 0.027750738, z: 0.15450245, w: 0.98710877}
+      scale: {x: 1.0000052, y: 0.99999684, z: 1.000002}
+    - name: Neck
+      parentName: Spine2
+      position: {x: -1.0872741, y: 28.831573, z: -0.25176796}
+      rotation: {x: 0.017615404, y: -0.33105457, z: 0.15365131, w: 0.9308512}
+      scale: {x: 1.0000023, y: 0.99999905, z: 1.0000007}
+    - name: Head
+      parentName: Neck
+      position: {x: 0.000002682209, y: 10.7225895, z: -0.0000010728836}
+      rotation: {x: -0.006466844, y: 0.22586155, z: -0.027882231, w: 0.9737389}
+      scale: {x: 0.9999989, y: 1.000001, z: 1.0000015}
+    - name: HeadEnd
+      parentName: Head
+      position: {x: 7.5208683, y: 17.859623, z: 0.00000064074993}
+      rotation: {x: -0.13998547, y: -0.693112, z: -0.13998517, w: 0.6931119}
+      scale: {x: 1.0000012, y: 1.0000062, z: 0.9999959}
+    - name: HeadEnd_end
+      parentName: HeadEnd
+      position: {x: -0.00000010430813, y: 12.587241, z: -0.00000047683716}
+      rotation: {x: 0.000000007450579, y: -0, z: 0.000000014901158, w: 1}
+      scale: {x: 0.99999994, y: 0.9999994, z: 1}
+    - name: HeadEnd_end_end
+      parentName: HeadEnd_end
+      position: {x: 0.00000067055225, y: 12.5871, z: 0.00000023841858}
+      rotation: {x: -0.00000005960463, y: 6.6613344e-16, z: -0.000000029802315, w: 1}
+      scale: {x: 1, y: 1.0000007, z: 1.0000004}
+    - name: HeadEnd_end_end_end
+      parentName: HeadEnd_end_end
+      position: {x: -0.0000005811453, y: 12.587064, z: -0.00000011920929}
+      rotation: {x: 0.00000005960463, y: -6.6613344e-16, z: 0.000000029802315, w: 1}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1.0000002}
+    - name: HeadEnd_end_end_end_end
+      parentName: HeadEnd_end_end_end
+      position: {x: -0, y: 12.587097, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightEye
+      parentName: Head
+      position: {x: -3.7605128, y: 7.6759405, z: 3.3795002}
+      rotation: {x: -0.6917795, y: 0.13971382, z: -0.14025162, w: 0.6944427}
+      scale: {x: 0.9999974, y: 1.0000037, z: 1.000008}
+    - name: RightEye_end
+      parentName: RightEye
+      position: {x: 0.0000010728836, y: 12.587101, z: -0.000026755035}
+      rotation: {x: -0.0019212957, y: 0.0000034570685, z: -0.0000002458691, w: 0.99999815}
+      scale: {x: 1.0000002, y: 0.9999995, z: 0.99999946}
+    - name: RightEye_end_end
+      parentName: RightEye_end
+      position: {x: 0.00000017881393, y: 12.587095, z: 0.000004351139}
+      rotation: {x: 0.000000566244, y: -0.000000029458526, z: -0.00000017886883, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000012}
+    - name: RightEye_end_end_end
+      parentName: RightEye_end_end
+      position: {x: 0.0000019669533, y: 12.587104, z: -0.000033318996}
+      rotation: {x: -0.0000005663604, y: 0.000000029458526, z: 0.00000017886885, w: 1}
+      scale: {x: 1.0000007, y: 1.0000005, z: 0.9999998}
+    - name: RightEye_end_end_end_end
+      parentName: RightEye_end_end_end
+      position: {x: -0, y: 12.587105, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftEye
+      parentName: Head
+      position: {x: -3.7603564, y: 7.6760526, z: -3.379499}
+      rotation: {x: -0.69190204, y: 0.13973802, z: -0.14022656, w: 0.69432086}
+      scale: {x: 0.99999756, y: 1.0000038, z: 1.0000082}
+    - name: LeftEye_end
+      parentName: LeftEye
+      position: {x: -0.000000059604645, y: 12.587198, z: 0.00000040233135}
+      rotation: {x: 0.009961217, y: 0.000003226101, z: -0.00000008940696, w: 0.9999504}
+      scale: {x: 0.9999999, y: 1.0000007, z: 0.9999997}
+    - name: LeftEye_end_end
+      parentName: LeftEye_end
+      position: {x: -0.000001013279, y: 12.587201, z: -0.000012218952}
+      rotation: {x: -0.011705564, y: 0.0000008900025, z: -0.0000003297733, w: 0.9999315}
+      scale: {x: 1.0000018, y: 0.9999998, z: 1.0000006}
+    - name: LeftEye_end_end_end
+      parentName: LeftEye_end_end
+      position: {x: 0.000000834465, y: 12.587196, z: -0.000018894672}
+      rotation: {x: -0.000000505708, y: 0.000000029490241, z: 0.00000017886352, w: 1}
+      scale: {x: 1.0000002, y: 0.99999917, z: 1.0000001}
+    - name: LeftEye_end_end_end_end
+      parentName: LeftEye_end_end_end
+      position: {x: -0, y: 12.587204, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: Spine2
+      position: {x: -0.97927797, y: 22.788973, z: 2.9253988}
+      rotation: {x: -0.75506157, y: 0.14780407, z: -0.037127823, w: -0.63769704}
+      scale: {x: 0.9999989, y: 1.0000012, z: 1.0000025}
+    - name: RightArm
+      parentName: RightShoulder
+      position: {x: 0.0000014901161, y: 14.74982, z: -0.00002864562}
+      rotation: {x: 0.09980066, y: -0.028730568, z: 0.028909344, w: -0.99417233}
+      scale: {x: 0.9999995, y: 0.9999998, z: 1.0000012}
+    - name: RightForeArm
+      parentName: RightArm
+      position: {x: 0.0000016838312, y: 25.762455, z: 0.000002797693}
+      rotation: {x: 0.03840927, y: -0.05440213, z: 0.052637868, w: 0.99639064}
+      scale: {x: 1.0000013, y: 0.9999996, z: 0.99999905}
+    - name: RightHand
+      parentName: RightForeArm
+      position: {x: -0.0000005364418, y: 25.030594, z: 0.00006517768}
+      rotation: {x: -0.07140197, y: -0.005703192, z: 0.022021951, w: 0.9971882}
+      scale: {x: 1.0000023, y: 1.0000029, z: 1.0000039}
+    - name: RightFingerBase
+      parentName: RightHand
+      position: {x: -0.00000756979, y: 2.1068017, z: -0.00003436953}
+      rotation: {x: 0.08689104, y: -0.09024153, z: 0.050680656, w: 0.99082685}
+      scale: {x: 1.0000021, y: 1.000001, z: 1.0000018}
+    - name: RightHandThumb1
+      parentName: RightFingerBase
+      position: {x: -2.077657, y: 1.0550759, z: 3.443316}
+      rotation: {x: -0.39352822, y: 0.7913747, z: -0.08359077, w: -0.46029803}
+      scale: {x: 1.0000026, y: 1, z: 1.0000029}
+    - name: RightHandThumb2
+      parentName: RightHandThumb1
+      position: {x: 0.00000059604645, y: 2.2168365, z: -0.0000038146973}
+      rotation: {x: 0.031282004, y: -0.5264418, z: -0.012156321, w: -0.8495486}
+      scale: {x: 1.0000055, y: 0.999998, z: 0.99999815}
+    - name: RightHandThumb3
+      parentName: RightHandThumb2
+      position: {x: 0.000052928925, y: 3.222077, z: 0.0000042915344}
+      rotation: {x: 0.02338864, y: -0.06979734, z: -0.033621024, w: 0.9967201}
+      scale: {x: 1.0000031, y: 1.0000036, z: 1}
+    - name: RightHandThumb4
+      parentName: RightHandThumb3
+      position: {x: -0.000061392784, y: 3.289366, z: -0.0000047683716}
+      rotation: {x: -0.42010775, y: 0.107641295, z: 0.7308195, w: 0.5270917}
+      scale: {x: 0.99999833, y: 1.0000019, z: 0.9999985}
+    - name: RightHandThumb4_end
+      parentName: RightHandThumb4
+      position: {x: 0.0000019073486, y: 3.28939, z: 0.0000034570694}
+      rotation: {x: 0.0000008791684, y: 0.00000009313224, z: -0.00000004470348, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000007}
+    - name: RightHandThumb4_end_end
+      parentName: RightHandThumb4_end
+      position: {x: -0.0000038146973, y: 3.2894366, z: -0.0000021457672}
+      rotation: {x: -0.0000011175869, y: -0.0000011026868, z: -0.000001274048, w: 1}
+      scale: {x: 0.99999964, y: 1.0000002, z: 1.0000001}
+    - name: RightHandThumb4_end_end_end
+      parentName: RightHandThumb4_end_end
+      position: {x: 0.0000047683716, y: 3.2893977, z: 0.0000009536743}
+      rotation: {x: 0.00000016391265, y: 0.000001121312, z: 0.0000012591478, w: 1}
+      scale: {x: 1.0000005, y: 1.0000001, z: 0.9999997}
+    - name: RightHandThumb4_end_end_end_end
+      parentName: RightHandThumb4_end_end_end
+      position: {x: -0, y: 3.2894135, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHandMiddle1
+      parentName: RightFingerBase
+      position: {x: -0.6904154, y: 6.483196, z: -0.9960425}
+      rotation: {x: -0.037324782, y: 0.1315529, z: -0.045080647, w: 0.98958}
+      scale: {x: 1.0000005, y: 1.000003, z: 1.0000036}
+    - name: RightHandMiddle2
+      parentName: RightHandMiddle1
+      position: {x: 0.00000023841858, y: 4.5451474, z: -0.00000059604645}
+      rotation: {x: 0.027469166, y: -0.037426088, z: 0.030816615, w: 0.9984464}
+      scale: {x: 1.0000011, y: 0.9999995, z: 1.0000013}
+    - name: RightHandMiddle3
+      parentName: RightHandMiddle2
+      position: {x: 0.000001013279, y: 2.8335347, z: -0.00003349781}
+      rotation: {x: 0.008489916, y: -0.015267948, z: 0.014210914, w: -0.9997464}
+      scale: {x: 1.0000007, y: 1.0000019, z: 1.0000007}
+    - name: RightHandMiddle4
+      parentName: RightHandMiddle3
+      position: {x: 0.0000011920929, y: 2.7518682, z: 0.0000023841858}
+      rotation: {x: 0.5233795, y: 0.45296338, z: -0.5255709, w: -0.49464464}
+      scale: {x: 0.99999887, y: 0.99999994, z: 1.0000002}
+    - name: RightHandMiddle4_end
+      parentName: RightHandMiddle4
+      position: {x: 0.0000063180923, y: 2.751875, z: -0.0000009536743}
+      rotation: {x: -0.00000026822084, y: 0.0000056177364, z: 0.0000055134283, w: 1}
+      scale: {x: 1.0000005, y: 0.9999995, z: 0.99999964}
+    - name: RightHandMiddle4_end_end
+      parentName: RightHandMiddle4_end
+      position: {x: -0.0000035762787, y: 2.7518878, z: -0.0000052452087}
+      rotation: {x: -0.00000041723234, y: -0.000007048244, z: -0.0000069588455, w: 1}
+      scale: {x: 0.9999995, y: 1.0000006, z: 0.99999976}
+    - name: RightHandMiddle4_end_end_end
+      parentName: RightHandMiddle4_end_end
+      position: {x: 0.00000333786, y: 2.7519035, z: 0.0000023841858}
+      rotation: {x: 0.00000008940709, y: 0.000001370906, z: 0.0000013858094, w: 1}
+      scale: {x: 1.0000012, y: 1.000001, z: 1.0000004}
+    - name: RightHandMiddle4_end_end_end_end
+      parentName: RightHandMiddle4_end_end_end
+      position: {x: -0, y: 2.7519073, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHandRing1
+      parentName: RightFingerBase
+      position: {x: 1.7621062, y: 5.901864, z: -1.296774}
+      rotation: {x: -0.04026471, y: 0.13866448, z: -0.04759719, w: 0.9883752}
+      scale: {x: 1.0000012, y: 1.0000019, z: 1.0000035}
+    - name: RightHandRing2
+      parentName: RightHandRing1
+      position: {x: -0.00000333786, y: 4.2444572, z: 0.00004339218}
+      rotation: {x: -0.03704033, y: 0.0132869305, z: -0.013203674, w: -0.9991383}
+      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000002}
+    - name: RightHandRing3
+      parentName: RightHandRing2
+      position: {x: 0.00000166893, y: 2.7248108, z: 0.0000027418137}
+      rotation: {x: -0.022122046, y: -0.046344377, z: 0.034452926, w: -0.9980861}
+      scale: {x: 0.9999997, y: 0.99999964, z: 1.0000002}
+    - name: RightHandRing4
+      parentName: RightHandRing3
+      position: {x: -0.0000042915344, y: 2.4582796, z: 0.000028371811}
+      rotation: {x: -0.544153, y: -0.49250418, z: 0.5379794, w: 0.4146269}
+      scale: {x: 0.99999917, y: 1.0000004, z: 0.99999976}
+    - name: RightHandRing4_end
+      parentName: RightHandRing4
+      position: {x: 0.0000012814999, y: 2.4583044, z: 0}
+      rotation: {x: -0.00000005960463, y: 0.00000007450579, z: -0.000000029802315, w: 1}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000008}
+    - name: RightHandRing4_end_end
+      parentName: RightHandRing4_end
+      position: {x: -0.00000011920929, y: 2.4583552, z: 0.00000047683716}
+      rotation: {x: 0.000000044703626, y: -0.0000014454118, z: -0.0000014305109, w: 1}
+      scale: {x: 1.0000011, y: 1.0000005, z: 1.0000002}
+    - name: RightHandRing4_end_end_end
+      parentName: RightHandRing4_end_end
+      position: {x: 0.000004798174, y: 2.4582965, z: 0.00000047683716}
+      rotation: {x: -0.000000044703626, y: 0.0000014454118, z: 0.0000014305109, w: 1}
+      scale: {x: 0.9999995, y: 1.0000001, z: 1.0000002}
+    - name: RightHandRing4_end_end_end_end
+      parentName: RightHandRing4_end_end_end
+      position: {x: -0, y: 2.4582977, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHandPinky1
+      parentName: RightFingerBase
+      position: {x: 3.945396, y: 5.22922, z: -1.1306171}
+      rotation: {x: 0.03172922, y: -0.11993725, z: 0.039425924, w: -0.9914908}
+      scale: {x: 0.9999994, y: 1.0000014, z: 1.0000014}
+    - name: RightHandPinky2
+      parentName: RightHandPinky1
+      position: {x: -0.0000014305115, y: 3.0845609, z: 0.00007623434}
+      rotation: {x: -0.006681177, y: -0.011843992, z: 0.011798788, w: -0.99983793}
+      scale: {x: 0.9999982, y: 0.9999995, z: 1.0000004}
+    - name: RightHandPinky3
+      parentName: RightHandPinky2
+      position: {x: -0.0000011920929, y: 1.9723859, z: 0.0000015497208}
+      rotation: {x: -0.008698586, y: 0.061985523, z: -0.039332602, w: 0.99726385}
+      scale: {x: 1.000002, y: 1.0000014, z: 1.0000029}
+    - name: RightHandPinky4
+      parentName: RightHandPinky3
+      position: {x: -0.00000047683716, y: 2.027218, z: 0.00000071525574}
+      rotation: {x: -0.5178136, y: -0.54596823, z: 0.5140203, w: 0.4117899}
+      scale: {x: 0.9999986, y: 0.99999887, z: 0.9999998}
+    - name: RightHandPinky4_end
+      parentName: RightHandPinky4
+      position: {x: -0.00000009685755, y: 2.027193, z: -0.00000047683716}
+      rotation: {x: -0.00000031292436, y: 0.0000000745058, z: -0.000000029802319, w: 1}
+      scale: {x: 0.9999995, y: 1.0000001, z: 1.000001}
+    - name: RightHandPinky4_end_end
+      parentName: RightHandPinky4_end
+      position: {x: 0.0000045970082, y: 2.0272179, z: -0.00000047683716}
+      rotation: {x: 0.00000014901163, y: -0.000000029802326, z: 0.000000029802319, w: 1}
+      scale: {x: 1.000001, y: 1.0000008, z: 0.9999999}
+    - name: RightHandPinky4_end_end_end
+      parentName: RightHandPinky4_end_end
+      position: {x: 0.000005595386, y: 2.0271826, z: 0.0000014305115}
+      rotation: {x: -0, y: -0, z: -8.881761e-16, w: 1}
+      scale: {x: 0.99999946, y: 1.0000006, z: 1.0000002}
+    - name: RightHandPinky4_end_end_end_end
+      parentName: RightHandPinky4_end_end_end
+      position: {x: -0, y: 2.0271912, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHandIndex1
+      parentName: RightFingerBase
+      position: {x: -2.9394436, y: 6.726969, z: -0.020046592}
+      rotation: {x: -0.044860233, y: 0.11703286, z: -0.05104214, w: 0.9908005}
+      scale: {x: 0.9999991, y: 1.0000008, z: 1.0000019}
+    - name: RightHandIndex2
+      parentName: RightHandIndex1
+      position: {x: 0.0000060796738, y: 4.171, z: 0.000030219555}
+      rotation: {x: 0.026145115, y: -0.05639919, z: 0.030792322, w: 0.99759084}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.0000002}
+    - name: RightHandIndex3
+      parentName: RightHandIndex2
+      position: {x: -0, y: 2.408574, z: -0.0000012367964}
+      rotation: {x: -0.019226657, y: 0.04070739, z: -0.03695002, w: 0.9983025}
+      scale: {x: 1.0000023, y: 1.0000023, z: 1.0000033}
+    - name: RightHandIndex4
+      parentName: RightHandIndex3
+      position: {x: -0.00000059604645, y: 2.6792598, z: 0.00000731647}
+      rotation: {x: -0.5054165, y: -0.46249855, z: 0.50619906, w: 0.52384335}
+      scale: {x: 0.99999887, y: 1.0000001, z: 0.999999}
+    - name: RightHandIndex4_end
+      parentName: RightHandIndex4
+      position: {x: 0.0000056624413, y: 2.6794407, z: -0.0000008493662}
+      rotation: {x: 0.00000041723243, y: 0.0000015050169, z: 0.0000016242262, w: 1}
+      scale: {x: 1.0000011, y: 0.99999964, z: 0.9999998}
+    - name: RightHandIndex4_end_end
+      parentName: RightHandIndex4_end
+      position: {x: -0.00000011920929, y: 2.6792943, z: -0.00000016391277}
+      rotation: {x: -0.00000014901141, y: 0.0000000447037, z: -0.00000005960482, w: 1}
+      scale: {x: 0.9999987, y: 1.0000004, z: 1.0000002}
+    - name: RightHandIndex4_end_end_end
+      parentName: RightHandIndex4_end_end
+      position: {x: -0.00000166893, y: 2.679298, z: -0.0000011771917}
+      rotation: {x: -0.000000178814, y: -0.0000014901159, z: -0.0000014454122, w: 1}
+      scale: {x: 1.0000004, y: 0.9999998, z: 0.9999998}
+    - name: RightHandIndex4_end_end_end_end
+      parentName: RightHandIndex4_end_end_end
+      position: {x: -0, y: 2.679306, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoulder
+      parentName: Spine2
+      position: {x: 0.51804173, y: 22.744904, z: -3.0314388}
+      rotation: {x: -0.113574706, y: -0.6543532, z: 0.74739623, w: -0.01793456}
+      scale: {x: 1.0000017, y: 1.0000023, z: 1.0000029}
+    - name: LeftArm
+      parentName: LeftShoulder
+      position: {x: 0.000000044703484, y: 14.749836, z: -0.000029545277}
+      rotation: {x: -0.09987481, y: 0.02887165, z: 0.02863922, w: 0.99416864}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000018}
+    - name: LeftForeArm
+      parentName: LeftArm
+      position: {x: -0.00000059604645, y: 25.762428, z: -0.0000053048134}
+      rotation: {x: 0.03590521, y: -0.05258636, z: -0.054371048, w: 0.9964885}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000008}
+    - name: LeftHand
+      parentName: LeftForeArm
+      position: {x: 0.0000047683716, y: 25.030573, z: -0.000009775162}
+      rotation: {x: -0.07427497, y: -0.024846815, z: -0.008542115, w: 0.9968916}
+      scale: {x: 1.0000012, y: 1.000003, z: 1.0000024}
+    - name: LeftFingerBase
+      parentName: LeftHand
+      position: {x: -0.0000009536743, y: 2.1068554, z: -0.000005722046}
+      rotation: {x: 0.07412872, y: 0.09029396, z: -0.06806381, w: 0.9908175}
+      scale: {x: 0.9999983, y: 0.99999946, z: 0.99999946}
+    - name: LeftHandThumb1
+      parentName: LeftFingerBase
+      position: {x: 2.764663, y: 1.0550898, z: 2.920937}
+      rotation: {x: 0.22774869, y: 0.43817815, z: -0.33164892, w: 0.80382806}
+      scale: {x: 1.0000025, y: 1.0000048, z: 0.9999981}
+    - name: LeftHandThumb2
+      parentName: LeftHandThumb1
+      position: {x: 0.00000500679, y: 2.2164907, z: -0.0000075101852}
+      rotation: {x: -0.026620919, y: -0.27133423, z: 0.020448139, w: 0.9618997}
+      scale: {x: 0.99999833, y: 0.99999404, z: 1.0000086}
+    - name: LeftHandThumb3
+      parentName: LeftHandThumb2
+      position: {x: 0.0000009536743, y: 3.2220008, z: -0.000001847744}
+      rotation: {x: 0.040093794, y: 0.055186022, z: 0.008279968, w: 0.9976364}
+      scale: {x: 1.0000005, y: 1.0000023, z: 1.0000006}
+    - name: LeftHandThumb4
+      parentName: LeftHandThumb3
+      position: {x: 0.00000047683716, y: 3.2896292, z: -0.00000047683716}
+      rotation: {x: 0.5286442, y: -0.5180973, z: -0.09935641, w: 0.66501045}
+      scale: {x: 1.0000042, y: 0.9999981, z: 0.99999887}
+    - name: LeftHandThumb4_end
+      parentName: LeftHandThumb4
+      position: {x: 0.0000027790666, y: 3.2896829, z: -0.00000047683716}
+      rotation: {x: 0.0000015497202, y: 0.000001341104, z: -0.0000011920924, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1.0000005}
+    - name: LeftHandThumb4_end_end
+      parentName: LeftHandThumb4_end
+      position: {x: -0.0000019874424, y: 3.2896876, z: -0.0000042915344}
+      rotation: {x: -0.0000006258484, y: 0.0000010132763, z: -0.0000010430834, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000006}
+    - name: LeftHandThumb4_end_end_end
+      parentName: LeftHandThumb4_end_end
+      position: {x: 0.000009465963, y: 3.2896972, z: -0.0000026226044}
+      rotation: {x: -2.8421699e-13, y: -0.0000009834754, z: 0.0000010728843, w: 1}
+      scale: {x: 0.99999964, y: 1.0000002, z: 0.99999934}
+    - name: LeftHandThumb4_end_end_end_end
+      parentName: LeftHandThumb4_end_end_end
+      position: {x: -0, y: 3.2897034, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHandMiddle1
+      parentName: LeftFingerBase
+      position: {x: 0.46193695, y: 6.48323, z: -1.1205764}
+      rotation: {x: -0.03235654, y: -0.02348657, z: 0.04880909, w: 0.9980076}
+      scale: {x: 1.0000045, y: 1.0000015, z: 1.0000027}
+    - name: LeftHandMiddle2
+      parentName: LeftHandMiddle1
+      position: {x: 0.0000023841858, y: 4.545075, z: -0.000017404556}
+      rotation: {x: 0.02531113, y: -0.03453789, z: -0.03260467, w: 0.9985507}
+      scale: {x: 0.9999988, y: 0.999998, z: 1.0000002}
+    - name: LeftHandMiddle3
+      parentName: LeftHandMiddle2
+      position: {x: -0, y: 2.833597, z: 0.0000052452087}
+      rotation: {x: -0.006841042, y: 0.014050843, z: 0.015073392, w: 0.9997643}
+      scale: {x: 1.0000008, y: 1.0000005, z: 1.0000018}
+    - name: LeftHandMiddle4
+      parentName: LeftHandMiddle3
+      position: {x: -0.00000667572, y: 2.7519054, z: -0.0000047683716}
+      rotation: {x: 0.4753613, y: -0.50334704, z: -0.4731436, w: 0.5448013}
+      scale: {x: 1.0000013, y: 1.000002, z: 1.0000011}
+    - name: LeftHandMiddle4_end
+      parentName: LeftHandMiddle4
+      position: {x: -0.0000005811453, y: 2.7517786, z: -0.000005722046}
+      rotation: {x: 0.0000003576277, y: 0.0000013113016, z: -0.0000014156096, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 0.9999997}
+    - name: LeftHandMiddle4_end_end
+      parentName: LeftHandMiddle4_end
+      position: {x: -0.00000040233135, y: 2.7518077, z: -0.00000047683716}
+      rotation: {x: -0.000000029802052, y: -0.0000013411034, z: 0.0000012516974, w: 1}
+      scale: {x: 1.0000001, y: 0.9999994, z: 1.0000004}
+    - name: LeftHandMiddle4_end_end_end
+      parentName: LeftHandMiddle4_end_end
+      position: {x: -0.0000028088689, y: 2.7517905, z: -0.0000019073486}
+      rotation: {x: 2.84217e-14, y: 0.00000008940671, z: -0.00000005960477, w: 1}
+      scale: {x: 0.9999993, y: 0.99999964, z: 1.0000011}
+    - name: LeftHandMiddle4_end_end_end_end
+      parentName: LeftHandMiddle4_end_end_end
+      position: {x: -0, y: 2.7518005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHandRing1
+      parentName: LeftFingerBase
+      position: {x: -1.9982636, y: 5.90187, z: -0.8906621}
+      rotation: {x: -0.035614714, y: -0.018637959, z: 0.051175542, w: 0.99788046}
+      scale: {x: 1.0000037, y: 0.99999994, z: 1.0000015}
+    - name: LeftHandRing2
+      parentName: LeftHandRing1
+      position: {x: -0.0000026226044, y: 4.2444644, z: -0.00000166893}
+      rotation: {x: 0.037004944, y: -0.0131639885, z: -0.013208675, w: 0.99914116}
+      scale: {x: 1.0000025, y: 1.0000011, z: 1.0000018}
+    - name: LeftHandRing3
+      parentName: LeftHandRing2
+      position: {x: 0.0000009536743, y: 2.7247598, z: -0.00000333786}
+      rotation: {x: 0.019903403, y: 0.04566549, z: 0.03577623, w: 0.99811757}
+      scale: {x: 1.0000017, y: 1.0000014, z: 1.0000013}
+    - name: LeftHandRing4
+      parentName: LeftHandRing3
+      position: {x: -0.0000014305115, y: 2.4583611, z: 0.000025510788}
+      rotation: {x: 0.45206174, y: -0.5792015, z: -0.45827538, w: 0.5001495}
+      scale: {x: 0.9999992, y: 1.0000039, z: 1.0000021}
+    - name: LeftHandRing4_end
+      parentName: LeftHandRing4
+      position: {x: 0.0000005364418, y: 2.4583104, z: 0.0000030994415}
+      rotation: {x: -0.000000029802308, y: 0.000000059604616, z: -0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000008}
+    - name: LeftHandRing4_end_end
+      parentName: LeftHandRing4_end
+      position: {x: 0.0000020861626, y: 2.458285, z: 0.0000004172325}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999999, z: 1.0000002}
+    - name: LeftHandRing4_end_end_end
+      parentName: LeftHandRing4_end_end
+      position: {x: 0.0000016093254, y: 2.4582949, z: 0.00000333786}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000011}
+    - name: LeftHandRing4_end_end_end_end
+      parentName: LeftHandRing4_end_end_end
+      position: {x: -0, y: 2.4582977, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHandPinky1
+      parentName: LeftFingerBase
+      position: {x: -4.0957737, y: 5.229213, z: -0.26254308}
+      rotation: {x: -0.026605964, y: -0.029242214, z: 0.043039087, w: 0.99829096}
+      scale: {x: 1.0000042, y: 1.0000007, z: 1.0000032}
+    - name: LeftHandPinky2
+      parentName: LeftHandPinky1
+      position: {x: 0.00000047683716, y: 3.0845745, z: -0.000011444092}
+      rotation: {x: 0.0068618935, y: 0.011745975, z: 0.011735805, w: 0.99983865}
+      scale: {x: 1.0000008, y: 1.0000029, z: 1.0000021}
+    - name: LeftHandPinky3
+      parentName: LeftHandPinky2
+      position: {x: -0.0000009536743, y: 1.9724282, z: 0.0000011920929}
+      rotation: {x: -0.014251192, y: 0.06589644, z: 0.037672397, w: 0.9970132}
+      scale: {x: 0.9999993, y: 1.0000002, z: 1.0000008}
+    - name: LeftHandPinky4
+      parentName: LeftHandPinky3
+      position: {x: -0.00000047683716, y: 2.0271955, z: 0.000004887581}
+      rotation: {x: 0.4816459, y: -0.5791147, z: -0.4854909, w: 0.44378155}
+      scale: {x: 0.99999815, y: 0.99999976, z: 1.0000005}
+    - name: LeftHandPinky4_end
+      parentName: LeftHandPinky4
+      position: {x: 0.0000036358833, y: 2.0272057, z: 0}
+      rotation: {x: -0.000000029802308, y: -0.0000019073477, z: 0.0000019967547, w: 1}
+      scale: {x: 1.0000006, y: 1.000001, z: 1.0000001}
+    - name: LeftHandPinky4_end_end
+      parentName: LeftHandPinky4_end
+      position: {x: -0.000002682209, y: 2.0272293, z: 0.0000023841858}
+      rotation: {x: -0.00000013411046, y: 0.0000018477434, z: -0.0000019669521, w: 1}
+      scale: {x: 0.99999964, y: 0.9999995, z: 0.9999995}
+    - name: LeftHandPinky4_end_end_end
+      parentName: LeftHandPinky4_end_end
+      position: {x: -0.000001847744, y: 2.0271971, z: 0.0000047683716}
+      rotation: {x: 0.00000034272654, y: -0.00000011920923, z: -0.00000008940692, w: 1}
+      scale: {x: 1.0000008, y: 0.9999991, z: 1}
+    - name: LeftHandPinky4_end_end_end_end
+      parentName: LeftHandPinky4_end_end_end
+      position: {x: -0, y: 2.0272064, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHandIndex1
+      parentName: LeftFingerBase
+      position: {x: 2.8674624, y: 6.726982, z: -0.6471348}
+      rotation: {x: -0.037224993, y: -0.04324559, z: 0.056800045, w: 0.99675375}
+      scale: {x: 1.0000032, y: 1.0000013, z: 1.0000027}
+    - name: LeftHandIndex2
+      parentName: LeftHandIndex1
+      position: {x: -0.0000014305115, y: 4.1710186, z: -0.0000009536743}
+      rotation: {x: 0.020385152, y: -0.049071513, z: -0.03488591, w: 0.9979777}
+      scale: {x: 0.9999991, y: 0.99999964, z: 1.0000015}
+    - name: LeftHandIndex3
+      parentName: LeftHandIndex2
+      position: {x: 0.0000038146973, y: 2.4085414, z: 0.0000071525574}
+      rotation: {x: -0.011287806, y: 0.03688651, z: 0.040016983, w: 0.99845415}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1.0000006}
+    - name: LeftHandIndex4
+      parentName: LeftHandIndex3
+      position: {x: -0.00000166893, y: 2.6792703, z: -0.000002861023}
+      rotation: {x: 0.49451172, y: -0.47433823, z: -0.49366766, w: 0.53549385}
+      scale: {x: 1.0000014, y: 1.0000011, z: 1.0000013}
+    - name: LeftHandIndex4_end
+      parentName: LeftHandIndex4
+      position: {x: 0.000007390976, y: 2.6794634, z: 0.0000023841858}
+      rotation: {x: -0.00000023841847, y: -0.00000014901154, z: 0.000000014901154, w: 1}
+      scale: {x: 1.0000006, y: 1.000001, z: 1.0000004}
+    - name: LeftHandIndex4_end_end
+      parentName: LeftHandIndex4_end
+      position: {x: 0.00000047683716, y: 2.6793067, z: -0.00000023841858}
+      rotation: {x: -0, y: -0, z: 1.6940651e-20, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: LeftHandIndex4_end_end_end
+      parentName: LeftHandIndex4_end_end
+      position: {x: 0.000002861023, y: 2.6792908, z: -0.00000059604645}
+      rotation: {x: 0.00000008940693, y: 0.00000008940695, z: -0.00000008940691, w: 1}
+      scale: {x: 1.0000008, y: 1.0000001, z: 1.000001}
+    - name: LeftHandIndex4_end_end_end_end
+      parentName: LeftHandIndex4_end_end_end
+      position: {x: -0, y: 2.6792908, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightUpLeg
+      parentName: Hips
+      position: {x: 8.1819, y: 8.485912, z: 1.9151639}
+      rotation: {x: 0.41714585, y: -0.5630862, z: -0.41992727, w: 0.57670134}
+      scale: {x: 1.0000039, y: 1.0000058, z: 1.0000032}
+    - name: RightLeg
+      parentName: RightUpLeg
+      position: {x: 0.0000003054738, y: 43.125244, z: -0.0000022277236}
+      rotation: {x: 0.014814153, y: 0.015448302, z: -0.014669761, w: 0.9996633}
+      scale: {x: 1.0000014, y: 1.0000021, z: 1.0000005}
+    - name: RightFoot
+      parentName: RightLeg
+      position: {x: 0.00000014901161, y: 43.69726, z: -0.000000923872}
+      rotation: {x: -0.57853067, y: 0.8147884, z: 0.004080707, w: 0.037491783}
+      scale: {x: 0.9999998, y: 1.0000061, z: 1.0000033}
+    - name: RightToeBase
+      parentName: RightFoot
+      position: {x: -0.0000005364418, y: 15.91396, z: -0.00000031292439}
+      rotation: {x: -0.0047934926, y: -0.011570453, z: -0.059710555, w: 0.99813724}
+      scale: {x: 1.0000002, y: 1.0000015, z: 1.0000013}
+    - name: RightToeEnd
+      parentName: RightToeBase
+      position: {x: 0.00000029802322, y: 7.646246, z: -0.00000044703484}
+      rotation: {x: -0.5830661, y: -0.40829343, z: -0.53740954, w: 0.45224053}
+      scale: {x: 1.0000007, y: 0.99999833, z: 1.0000018}
+    - name: RightToeEnd_end
+      parentName: RightToeEnd
+      position: {x: -0.00000023890487, y: 7.646199, z: -0.0000012614337}
+      rotation: {x: -0, y: -0.00000005960463, z: -0.000000014901158, w: 1}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1.0000001}
+    - name: RightToeEnd_end_end
+      parentName: RightToeEnd_end
+      position: {x: -0.00000009323958, y: 7.646195, z: -0.0000005458767}
+      rotation: {x: -0.00000032782543, y: 0.000000059604623, z: 2.1316275e-14, w: 1}
+      scale: {x: 0.99999964, y: 1.0000002, z: 1.0000006}
+    - name: RightToeEnd_end_end_end
+      parentName: RightToeEnd_end_end
+      position: {x: -0.00000018364682, y: 7.6461854, z: -0.00000005116408}
+      rotation: {x: 0.00000032782543, y: -0.00000004470347, z: 0.000000014901141, w: 1}
+      scale: {x: 1.0000006, y: 0.9999997, z: 1}
+    - name: RightToeEnd_end_end_end_end
+      parentName: RightToeEnd_end_end_end
+      position: {x: -0, y: 7.6461964, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftUpLeg
+      parentName: Hips
+      position: {x: -8.1819, y: 8.485912, z: 1.9151639}
+      rotation: {x: 0.41146973, y: 0.57075596, z: 0.42549077, w: 0.5691116}
+      scale: {x: 1.0000031, y: 1.0000032, z: 1.0000011}
+    - name: LeftLeg
+      parentName: LeftUpLeg
+      position: {x: 0.00000011920929, y: 43.12523, z: 0.0000007301569}
+      rotation: {x: 0.013970122, y: 0.0146538615, z: 0.015489072, w: 0.99967504}
+      scale: {x: 0.99999875, y: 0.9999994, z: 0.99999994}
+    - name: LeftFoot
+      parentName: LeftLeg
+      position: {x: 0.0000006854534, y: 43.69729, z: -0.000000052154064}
+      rotation: {x: 0.022839172, y: -0.0070240777, z: -0.5780938, w: 0.81562036}
+      scale: {x: 1, y: 1.0000036, z: 1.0000013}
+    - name: LeftToeBase
+      parentName: LeftFoot
+      position: {x: -0.0000010430813, y: 15.913967, z: -0.00000046938658}
+      rotation: {x: 0.0034904606, y: 0.011942741, z: -0.059794813, w: 0.99813324}
+      scale: {x: 1.0000026, y: 1.0000031, z: 1.0000025}
+    - name: LeftToeEnd
+      parentName: LeftToeBase
+      position: {x: 0.0000011324883, y: 7.646269, z: 0.000000029802322}
+      rotation: {x: 0.41311094, y: -0.57727885, z: 0.4478372, w: 0.5436271}
+      scale: {x: 0.9999984, y: 0.9999989, z: 1.0000005}
+    - name: LeftToeEnd_end
+      parentName: LeftToeEnd
+      position: {x: -0.00000049888246, y: 7.6462, z: -0.00000057715295}
+      rotation: {x: -0.00000061094755, y: 0.0000001490116, z: -0.00000008940696, w: 1}
+      scale: {x: 0.99999976, y: 1.0000005, z: 1.0000006}
+    - name: LeftToeEnd_end_end
+      parentName: LeftToeEnd_end
+      position: {x: 0.00000020344112, y: 7.646196, z: 0.00000069940825}
+      rotation: {x: 0.0000004172325, y: -0.00000014901156, z: -1.4210851e-14, w: 1}
+      scale: {x: 1.000001, y: 1, z: 0.9999995}
+    - name: LeftToeEnd_end_end_end
+      parentName: LeftToeEnd_end_end
+      position: {x: -0.00000006772899, y: 7.6461873, z: 0.0000014760119}
+      rotation: {x: -0, y: -0, z: -6.776262e-21, w: 1}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000005}
+    - name: LeftToeEnd_end_end_end_end
+      parentName: LeftToeEnd_end_end_end
+      position: {x: -0, y: 7.6461983, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Work_Bench__2_
+      parentName: foreman-tut - Copy(Clone)
+      position: {x: 0.82100576, y: -0.402879, z: 0.49985054}
+      rotation: {x: -0.000000026692543, y: 0.70710677, z: 0.00000002669254, w: 0.7071068}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: GoodButton
+      parentName: Work_Bench__2_
+      position: {x: -98.49999, y: 124.868774, z: -66.05682}
+      rotation: {x: -1.3e-44, y: 4.0708518e-15, z: 1.7801819e-22, w: 1}
+      scale: {x: 0.87271994, y: 0.87271994, z: 0.87271994}
+    - name: Base
+      parentName: GoodButton
+      position: {x: -0, y: 0.000006241471, z: 0}
+      rotation: {x: -1.3877788e-15, y: 6.40583e-30, z: -6.8304184e-23, w: 1}
+      scale: {x: 0.1, y: 0.01, z: 0.1}
+    - name: Press
+      parentName: GoodButton
+      position: {x: -0, y: 1.5900025, z: 0}
+      rotation: {x: -0, y: 6.40583e-30, z: 1.8549768e-23, w: 1}
+      scale: {x: 0.09, y: 0.008, z: 0.09}
+    - name: Collider
+      parentName: GoodButton
+      position: {x: -0, y: 1.5900025, z: 0}
+      rotation: {x: -0, y: 6.40583e-30, z: 1.8549768e-23, w: 1}
+      scale: {x: 0.09, y: 0.008, z: 0.09}
+    - name: BadButton
+      parentName: Work_Bench__2_
+      position: {x: -121.75002, y: 124.868774, z: -66.05683}
+      rotation: {x: -1.3e-44, y: 4.0708518e-15, z: 1.7801819e-22, w: 1}
+      scale: {x: 0.87271994, y: 0.87271994, z: 0.87271994}
+    - name: Base_1
+      parentName: BadButton
+      position: {x: -0, y: 0.0000062414715, z: 0}
+      rotation: {x: -1.3877788e-15, y: 6.40583e-30, z: -6.8304184e-23, w: 1}
+      scale: {x: 0.1, y: 0.01, z: 0.1}
+    - name: Press_1
+      parentName: BadButton
+      position: {x: -0, y: 1.5900025, z: 0}
+      rotation: {x: -0, y: 6.40583e-30, z: 1.8549768e-23, w: 1}
+      scale: {x: 0.09, y: 0.008, z: 0.09}
+    - name: Collider_1
+      parentName: BadButton
+      position: {x: -0, y: 1.5900025, z: 0}
+      rotation: {x: -0, y: 6.40583e-30, z: 1.8549768e-23, w: 1}
+      scale: {x: 0.09, y: 0.008, z: 0.09}
+    - name: Bad_Bin
+      parentName: Work_Bench__2_
+      position: {x: -118.882195, y: 66.52877, z: -145.80713}
+      rotation: {x: -1.4e-44, y: 2.42944e-15, z: 1.8472324e-22, w: 1}
+      scale: {x: 1.3718649, y: 2.2292972, z: 1.5656354}
+    - name: DeleteArea
+      parentName: Bad_Bin
+      position: {x: -1.3199997, y: 6.7000012, z: 0.0000076293945}
+      rotation: {x: -2.0018332e-15, y: -2.92353e-16, z: -7.890332e-23, w: 1}
+      scale: {x: 0.15965924, y: 0.055460315, z: 0.13192646}
+    - name: Cube__16_
+      parentName: Bad_Bin
+      position: {x: -2.7799988, y: 4.1400013, z: -9.059994}
+      rotation: {x: -1.387779e-15, y: 1.0283214e-15, z: -2.239044e-22, w: 1}
+      scale: {x: 0.21592918, y: 0.3944822, z: 0.009999999}
+    - name: Cube__19_
+      parentName: Bad_Bin
+      position: {x: -2.7799988, y: 4.14, z: 11.900002}
+      rotation: {x: -1.387779e-15, y: 1.0283214e-15, z: -2.239044e-22, w: 1}
+      scale: {x: 0.21592918, y: 0.3944822, z: 0.009999999}
+    - name: Cube__17_
+      parentName: Bad_Bin
+      position: {x: 7.529999, y: 4.1400003, z: 1.3100052}
+      rotation: {x: 7.2713326e-16, y: 0.70710677, z: -7.271332e-16, w: 0.7071068}
+      scale: {x: 0.2159292, y: 0.3944822, z: 0.009999999}
+    - name: Cube__18_
+      parentName: Bad_Bin
+      position: {x: -13.069992, y: 4.1400003, z: 1.300003}
+      rotation: {x: 7.2713326e-16, y: 0.70710677, z: -7.271332e-16, w: 0.7071068}
+      scale: {x: 0.2159292, y: 0.3944822, z: 0.009999999}
+    - name: Cube__12_
+      parentName: Bad_Bin
+      position: {x: -2.590004, y: 0.00000017433103, z: 1.4300041}
+      rotation: {x: -2.0018332e-15, y: -4.341044e-17, z: -1.2035063e-22, w: 1}
+      scale: {x: 0.21772987, y: 0.055460315, z: 0.20884018}
+    - name: Good_Bin
+      parentName: Work_Bench__2_
+      position: {x: -112.60001, y: 66.52876, z: -91.05684}
+      rotation: {x: -1.4e-44, y: 2.42944e-15, z: 1.8472324e-22, w: 1}
+      scale: {x: 1.3718649, y: 2.2292972, z: 1.5656354}
+    - name: Cube__16__1
+      parentName: Good_Bin
+      position: {x: -2.7812119, y: 10.545987, z: -9.056179}
+      rotation: {x: -3.0549056e-15, y: 1.0283214e-15, z: -1.8907278e-22, w: 1}
+      scale: {x: 0.21592918, y: 0.26638, z: 0.009999999}
+    - name: Cube__19__1
+      parentName: Good_Bin
+      position: {x: -2.7812119, y: 10.545986, z: 11.900001}
+      rotation: {x: -3.0549056e-15, y: 1.0283214e-15, z: -1.8907278e-22, w: 1}
+      scale: {x: 0.21592918, y: 0.26638, z: 0.009999999}
+    - name: Cube__17__1
+      parentName: Good_Bin
+      position: {x: 7.529999, y: 10.545986, z: 1.3100004}
+      rotation: {x: -4.517035e-16, y: 0.70710677, z: 4.5170345e-16, w: 0.7071068}
+      scale: {x: 0.2159292, y: 0.26638, z: 0.009999999}
+    - name: Cube__18__1
+      parentName: Good_Bin
+      position: {x: -13.069992, y: 10.545986, z: 1.3000002}
+      rotation: {x: -4.517035e-16, y: 0.70710677, z: 4.5170345e-16, w: 0.7071068}
+      scale: {x: 0.2159292, y: 0.26638, z: 0.009999999}
+    - name: Cube__12__1
+      parentName: Good_Bin
+      position: {x: -2.75, y: 0.0000011811676, z: 1.4300003}
+      rotation: {x: -2.0018332e-15, y: -2.8642207e-17, z: -1.2035063e-22, w: 1}
+      scale: {x: 0.21462186, y: 0.055460315, z: 0.20884018}
+    - name: Keys_Tray_1
+      parentName: Work_Bench__2_
+      position: {x: -21.985298, y: 124.2233, z: -24.144123}
+      rotation: {x: 6.123222e-17, y: 1, z: -1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 1.5408456, y: 1.0647998, z: 1.4775162}
+    - name: Keys
+      parentName: Keys_Tray_1
+      position: {x: -58.7, y: 51.1, z: -19.719196}
+      rotation: {x: -2.5e-44, y: -2.4648724e-15, z: 3.6497333e-22, w: 1}
+      scale: {x: 0.6910489, y: 1, z: 0.7206688}
+    - name: Key
+      parentName: Keys
+      position: {x: 65.799995, y: -49.899994, z: -2.4499893}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone
+      parentName: Key
+      position: {x: -50.989014, y: 0.000031581738, z: 26.031128}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_45
+      parentName: Key
+      position: {x: 0.000061035156, y: 0.00003354704, z: -0.00012207031}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__1
+      parentName: Key
+      position: {x: -50.989014, y: 0.000031581738, z: 26.031128}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__3
+      parentName: Key
+      position: {x: -26.580017, y: 0.00003156899, z: 26.199951}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__7_
+      parentName: Keys
+      position: {x: 65.79999, y: -49.89999, z: 14.400009}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_1
+      parentName: Key__7_
+      position: {x: -50.988953, y: 0.000049288115, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_46
+      parentName: Key__7_
+      position: {x: 0.000061035156, y: 0.000051253417, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__2
+      parentName: Key__7_
+      position: {x: -50.988953, y: 0.000049288115, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__4
+      parentName: Key__7_
+      position: {x: -26.579956, y: 0.000049275368, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__10_
+      parentName: Keys
+      position: {x: 65.8, y: -49.89999, z: 31.2}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_2
+      parentName: Key__10_
+      position: {x: -50.989014, y: 0.00006694195, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_47
+      parentName: Key__10_
+      position: {x: -0, y: 0.00006890726, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__3
+      parentName: Key__10_
+      position: {x: -50.989014, y: 0.00006694195, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__5
+      parentName: Key__10_
+      position: {x: -26.580017, y: 0.000066929206, z: 26.200012}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__17_
+      parentName: Keys
+      position: {x: 65.8, y: -49.89999, z: 48.300007}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_3
+      parentName: Key__17_
+      position: {x: -50.989014, y: 0.00008491105, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_48
+      parentName: Key__17_
+      position: {x: -0, y: 0.00008687635, z: 0.000030517578}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__4
+      parentName: Key__17_
+      position: {x: -50.989014, y: 0.00008491105, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__6
+      parentName: Key__17_
+      position: {x: -26.580017, y: 0.0000848983, z: 26.200012}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__1_
+      parentName: Keys
+      position: {x: 74.49999, y: -49.899994, z: -2.4499893}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_4
+      parentName: Key__1_
+      position: {x: -50.989014, y: 0.000031581738, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_49
+      parentName: Key__1_
+      position: {x: 0.000061035156, y: 0.00003354704, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__5
+      parentName: Key__1_
+      position: {x: -50.989014, y: 0.000031581738, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__7
+      parentName: Key__1_
+      position: {x: -26.580017, y: 0.00003156899, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__5_
+      parentName: Keys
+      position: {x: 74.499985, y: -49.89999, z: 14.400009}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_5
+      parentName: Key__5_
+      position: {x: -50.989014, y: 0.000049288115, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_50
+      parentName: Key__5_
+      position: {x: -0, y: 0.000051253417, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__6
+      parentName: Key__5_
+      position: {x: -50.989014, y: 0.000049288115, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__8
+      parentName: Key__5_
+      position: {x: -26.580017, y: 0.000049275368, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__13_
+      parentName: Keys
+      position: {x: 74.5, y: -49.89999, z: 31.2}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_6
+      parentName: Key__13_
+      position: {x: -50.989014, y: 0.00006694195, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_51
+      parentName: Key__13_
+      position: {x: -0, y: 0.00006890726, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__7
+      parentName: Key__13_
+      position: {x: -50.989014, y: 0.00006694195, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__9
+      parentName: Key__13_
+      position: {x: -26.580017, y: 0.000066929206, z: 26.200012}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__15_
+      parentName: Keys
+      position: {x: 74.49999, y: -49.89999, z: 48.3}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_7
+      parentName: Key__15_
+      position: {x: -50.989014, y: 0.000084911044, z: 26.03122}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_52
+      parentName: Key__15_
+      position: {x: -0, y: 0.000086876345, z: 0.000061035156}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__8
+      parentName: Key__15_
+      position: {x: -50.989014, y: 0.000084911044, z: 26.03122}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__10
+      parentName: Key__15_
+      position: {x: -26.580017, y: 0.0000848983, z: 26.200012}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__2_
+      parentName: Keys
+      position: {x: 82.59999, y: -49.899994, z: -2.449997}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_8
+      parentName: Key__2_
+      position: {x: -50.989136, y: 0.00003158173, z: 26.031372}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_53
+      parentName: Key__2_
+      position: {x: -0.000061035156, y: 0.000033547032, z: 0.00012207031}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__9
+      parentName: Key__2_
+      position: {x: -50.989136, y: 0.00003158173, z: 26.031372}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__11
+      parentName: Key__2_
+      position: {x: -26.58014, y: 0.000031568983, z: 26.200195}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__8_
+      parentName: Keys
+      position: {x: 82.59999, y: -49.89999, z: 14.400002}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_9
+      parentName: Key__8_
+      position: {x: -50.989014, y: 0.000049288115, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_54
+      parentName: Key__8_
+      position: {x: -0, y: 0.00005125341, z: 0.000061035156}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__10
+      parentName: Key__8_
+      position: {x: -50.989014, y: 0.000049288115, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__12
+      parentName: Key__8_
+      position: {x: -26.580017, y: 0.000049275368, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__18_
+      parentName: Keys
+      position: {x: 82.6, y: -49.89999, z: 31.500008}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_10
+      parentName: Key__18_
+      position: {x: -50.989014, y: 0.000067257206, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_55
+      parentName: Key__18_
+      position: {x: -0, y: 0.000069222515, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__11
+      parentName: Key__18_
+      position: {x: -50.989014, y: 0.000067257206, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__13
+      parentName: Key__18_
+      position: {x: -26.580017, y: 0.00006724446, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__19_
+      parentName: Keys
+      position: {x: 82.6, y: -49.89999, z: 48.3}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_11
+      parentName: Key__19_
+      position: {x: -50.989075, y: 0.000084911044, z: 26.03122}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_56
+      parentName: Key__19_
+      position: {x: -0.000061035156, y: 0.000086876345, z: 0.000061035156}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__12
+      parentName: Key__19_
+      position: {x: -50.989075, y: 0.000084911044, z: 26.03122}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__14
+      parentName: Key__19_
+      position: {x: -26.580078, y: 0.0000848983, z: 26.200012}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__3_
+      parentName: Keys
+      position: {x: 90.399994, y: -49.899994, z: -2.449997}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_12
+      parentName: Key__3_
+      position: {x: -50.989075, y: 0.00003158173, z: 26.031372}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_57
+      parentName: Key__3_
+      position: {x: -0, y: 0.000033547032, z: 0.00012207031}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__13
+      parentName: Key__3_
+      position: {x: -50.989075, y: 0.00003158173, z: 26.031372}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__15
+      parentName: Key__3_
+      position: {x: -26.58014, y: 0.000031568983, z: 26.200195}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__6_
+      parentName: Keys
+      position: {x: 90.399994, y: -49.89999, z: 14.400002}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_13
+      parentName: Key__6_
+      position: {x: -50.988953, y: 0.000049288115, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_58
+      parentName: Key__6_
+      position: {x: 0.000061035156, y: 0.00005125341, z: 0.000061035156}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__14
+      parentName: Key__6_
+      position: {x: -50.988953, y: 0.000049288115, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__16
+      parentName: Key__6_
+      position: {x: -26.580017, y: 0.000049275368, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__14_
+      parentName: Keys
+      position: {x: 90.4, y: -49.89999, z: 31.2}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_14
+      parentName: Key__14_
+      position: {x: -50.989075, y: 0.00006694195, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_59
+      parentName: Key__14_
+      position: {x: -0, y: 0.00006890725, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__15
+      parentName: Key__14_
+      position: {x: -50.989075, y: 0.00006694195, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__17
+      parentName: Key__14_
+      position: {x: -26.580017, y: 0.000066929206, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__16_
+      parentName: Keys
+      position: {x: 90.4, y: -49.89999, z: 48.3}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_15
+      parentName: Key__16_
+      position: {x: -50.989075, y: 0.00008491104, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_60
+      parentName: Key__16_
+      position: {x: -0.000061035156, y: 0.000086876345, z: 0.000030517578}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__16
+      parentName: Key__16_
+      position: {x: -50.989075, y: 0.00008491104, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__18
+      parentName: Key__16_
+      position: {x: -26.580017, y: 0.000084898296, z: 26.199982}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__4_
+      parentName: Keys
+      position: {x: 98.49999, y: -49.899994, z: -2.449997}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_16
+      parentName: Key__4_
+      position: {x: -50.989136, y: 0.000031581738, z: 26.031372}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_61
+      parentName: Key__4_
+      position: {x: -0.00012207031, y: 0.00003354704, z: 0.00012207031}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__17
+      parentName: Key__4_
+      position: {x: -50.989136, y: 0.000031581738, z: 26.031372}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__19
+      parentName: Key__4_
+      position: {x: -26.580078, y: 0.00003156899, z: 26.200195}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__9_
+      parentName: Keys
+      position: {x: 98.49999, y: -49.89999, z: 14.400002}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_17
+      parentName: Key__9_
+      position: {x: -50.989014, y: 0.000049288123, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_62
+      parentName: Key__9_
+      position: {x: -0, y: 0.000051253417, z: 0.000061035156}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__18
+      parentName: Key__9_
+      position: {x: -50.989014, y: 0.000049288123, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__20
+      parentName: Key__9_
+      position: {x: -26.579956, y: 0.000049275375, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__12_
+      parentName: Keys
+      position: {x: 98.49999, y: -49.89999, z: 31.2}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_18
+      parentName: Key__12_
+      position: {x: -50.989014, y: 0.00006694195, z: 26.03125}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_63
+      parentName: Key__12_
+      position: {x: -0, y: 0.00006890725, z: 0}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__19
+      parentName: Key__12_
+      position: {x: -50.989014, y: 0.00006694195, z: 26.03125}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__21
+      parentName: Key__12_
+      position: {x: -26.580078, y: 0.000066929206, z: 26.200073}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Key__20_
+      parentName: Keys
+      position: {x: 98.49999, y: -49.89999, z: 48.3}
+      rotation: {x: 6.123246e-17, y: 1, z: 1.6155446e-15, w: -0.0000000754979}
+      scale: {x: 0.07184638, y: 0.07184637, z: 0.07184638}
+    - name: MaleSnapZone_19
+      parentName: Key__20_
+      position: {x: -50.989014, y: 0.00008491104, z: 26.031189}
+      rotation: {x: -4.983261e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.022869412, z: 0.69498855}
+    - name: Cube_64
+      parentName: Key__20_
+      position: {x: -0, y: 0.000086876345, z: 0.000030517578}
+      rotation: {x: -3.5527135e-15, y: 2.524355e-29, z: -8.4703295e-22, w: 1}
+      scale: {x: 0.25, y: 0.25000003, z: 2}
+    - name: Cube__1__20
+      parentName: Key__20_
+      position: {x: -50.989014, y: 0.00008491104, z: 26.031189}
+      rotation: {x: -4.3323076e-15, y: 9.410333e-15, z: -1.0248256e-21, w: 1}
+      scale: {x: 0.20662856, y: 0.25000003, z: 0.69498855}
+    - name: Cube__2__22
+      parentName: Key__20_
+      position: {x: -26.580078, y: 0.000084898296, z: 26.199982}
+      rotation: {x: -4.0207278e-15, y: 8.977484e-15, z: -3.7605797e-22, w: 1}
+      scale: {x: 0.28155, y: 0.25000003, z: 0.19786799}
+    - name: Cube__3_
+      parentName: Keys_Tray_1
+      position: {x: 15.760006, y: 0.62593406, z: -2.5700035}
+      rotation: {x: -1.4523137e-15, y: -8.321557e-23, z: 0.7071067, w: 0.7071068}
+      scale: {x: 0.02443962, y: 0.0031067308, z: 0.5442658}
+    - name: Cube__4__1
+      parentName: Keys_Tray_1
+      position: {x: -15.919994, y: 0.6300005, z: -2.630001}
+      rotation: {x: -1.4523137e-15, y: -8.321557e-23, z: 0.7071067, w: 0.7071068}
+      scale: {x: 0.02443962, y: 0.0031067308, z: 0.5442658}
+    - name: Cube_1
+      parentName: Keys_Tray_1
+      position: {x: 0.0000038146973, y: -0.000004378543, z: -2.5699997}
+      rotation: {x: 8.5785194e-16, y: 1.04597655e-23, z: -6.409759e-23, w: 1}
+      scale: {x: 0.31822, y: 0.0040443423, z: 0.5442658}
+    - name: Cube__2__1
+      parentName: Keys_Tray_1
+      position: {x: -0.071998596, y: 0.6259369, z: 24.719997}
+      rotation: {x: 0.7071068, y: 3.7518964e-22, z: 4.7189085e-23, w: 0.7071067}
+      scale: {x: 0.31967142, y: 0.003576932, z: 0.024439624}
+    - name: Cube__5__1
+      parentName: Keys_Tray_1
+      position: {x: -0.071998596, y: 0.6300053, z: -29.620003}
+      rotation: {x: 0.7071068, y: 3.7518964e-22, z: 4.7189085e-23, w: 0.7071067}
+      scale: {x: 0.31967142, y: 0.003576932, z: 0.024439624}
+    - name: Sockets_Tray
+      parentName: Work_Bench__2_
+      position: {x: -23.164047, y: 124.223305, z: -157.7438}
+      rotation: {x: -1.6682544e-15, y: 2.3551042e-15, z: 1.5324503e-22, w: 1}
+      scale: {x: 1.5408456, y: 1.0647998, z: 1.4775162}
+    - name: Cube__3__1
+      parentName: Sockets_Tray
+      position: {x: 15.7599945, y: 0.62592876, z: -2.5700073}
+      rotation: {x: 1.4523139e-15, y: -6.6520134e-23, z: 0.7071067, w: 0.7071068}
+      scale: {x: 0.02443962, y: 0.0031067308, z: 0.5442658}
+    - name: Cube__4__2
+      parentName: Sockets_Tray
+      position: {x: -15.920002, y: 0.6300029, z: -2.6300087}
+      rotation: {x: 1.4523139e-15, y: -6.6520134e-23, z: 0.7071067, w: 0.7071068}
+      scale: {x: 0.02443962, y: 0.0031067308, z: 0.5442658}
+    - name: Cube_2
+      parentName: Sockets_Tray
+      position: {x: -0.0000038146973, y: -0.000001996798, z: -2.5700111}
+      rotation: {x: -8.5785194e-16, y: 6.9777076e-16, z: 1.2867336e-22, w: 1}
+      scale: {x: 0.31822, y: 0.0040443423, z: 0.5442658}
+    - name: Cube__2__2
+      parentName: Sockets_Tray
+      position: {x: -0.07201004, y: 0.62592596, z: 24.719992}
+      rotation: {x: 0.7071068, y: 9.823165e-16, z: -2.743435e-15, w: 0.7071067}
+      scale: {x: 0.31967142, y: 0.003576932, z: 0.024439624}
+    - name: Cube__5__2
+      parentName: Sockets_Tray
+      position: {x: -0.072006226, y: 0.6299981, z: -29.620014}
+      rotation: {x: 0.7071068, y: 9.823165e-16, z: -2.743435e-15, w: 0.7071067}
+      scale: {x: 0.31967142, y: 0.003576932, z: 0.024439624}
+    - name: Socket_for_animation__77_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.5036197, z: 20.299992}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_3
+      parentName: Socket_for_animation__77_
+      position: {x: -0.000023250284, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__3
+      parentName: Socket_for_animation__77_
+      position: {x: 49.999977, y: -0.000061035156, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9_
+      parentName: Socket_for_animation__77_
+      position: {x: 49.999977, y: -0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__3
+      parentName: Socket_for_animation__77_
+      position: {x: 37.499977, y: -0.000061035156, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8_
+      parentName: Socket_for_animation__77_
+      position: {x: 37.499977, y: -0.000061035156, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point
+      parentName: Socket_for_animation__77_
+      position: {x: -11.800074, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__42_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.5036197, z: 20.299995}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_4
+      parentName: Socket_for_animation__42_
+      position: {x: -0.000016359354, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__4
+      parentName: Socket_for_animation__42_
+      position: {x: 49.999985, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__1
+      parentName: Socket_for_animation__42_
+      position: {x: 49.999985, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__4
+      parentName: Socket_for_animation__42_
+      position: {x: 37.499985, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__1
+      parentName: Socket_for_animation__42_
+      position: {x: 37.499985, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_1
+      parentName: Socket_for_animation__42_
+      position: {x: -11.800067, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__49_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.503621, z: 6.628395}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_5
+      parentName: Socket_for_animation__49_
+      position: {x: -0.00004447694, y: 0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__5
+      parentName: Socket_for_animation__49_
+      position: {x: 49.999958, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__2
+      parentName: Socket_for_animation__49_
+      position: {x: 49.999954, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__5
+      parentName: Socket_for_animation__49_
+      position: {x: 37.499958, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__2
+      parentName: Socket_for_animation__49_
+      position: {x: 37.499954, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_2
+      parentName: Socket_for_animation__49_
+      position: {x: -11.800095, y: 0.000061035156, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__51_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.503621, z: 6.6283913}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_6
+      parentName: Socket_for_animation__51_
+      position: {x: -0.000037586015, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__6
+      parentName: Socket_for_animation__51_
+      position: {x: 49.999966, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__3
+      parentName: Socket_for_animation__51_
+      position: {x: 49.99996, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__6
+      parentName: Socket_for_animation__51_
+      position: {x: 37.499966, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__3
+      parentName: Socket_for_animation__51_
+      position: {x: 37.49996, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_3
+      parentName: Socket_for_animation__51_
+      position: {x: -11.800088, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__78_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036225, z: -6.8333893}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_7
+      parentName: Socket_for_animation__78_
+      position: {x: -0.00006537783, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__7
+      parentName: Socket_for_animation__78_
+      position: {x: 49.999935, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__4
+      parentName: Socket_for_animation__78_
+      position: {x: 49.999935, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__7
+      parentName: Socket_for_animation__78_
+      position: {x: 37.499935, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__4
+      parentName: Socket_for_animation__78_
+      position: {x: 37.499935, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_4
+      parentName: Socket_for_animation__78_
+      position: {x: -11.800116, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__50_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036225, z: -6.833393}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_8
+      parentName: Socket_for_animation__50_
+      position: {x: -0.00005848691, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__8
+      parentName: Socket_for_animation__50_
+      position: {x: 49.999943, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__5
+      parentName: Socket_for_animation__50_
+      position: {x: 49.999943, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__8
+      parentName: Socket_for_animation__50_
+      position: {x: 37.499943, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__5
+      parentName: Socket_for_animation__50_
+      position: {x: 37.49994, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_5
+      parentName: Socket_for_animation__50_
+      position: {x: -11.800109, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__52_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.5036197, z: 20.299995}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_9
+      parentName: Socket_for_animation__52_
+      position: {x: -0.000023250277, y: 0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__9
+      parentName: Socket_for_animation__52_
+      position: {x: 49.999977, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__6
+      parentName: Socket_for_animation__52_
+      position: {x: 49.999977, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__9
+      parentName: Socket_for_animation__52_
+      position: {x: 37.499977, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__6
+      parentName: Socket_for_animation__52_
+      position: {x: 37.499977, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_6
+      parentName: Socket_for_animation__52_
+      position: {x: -11.800074, y: 0.000061035156, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__53_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.5036197, z: 20.299995}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_10
+      parentName: Socket_for_animation__53_
+      position: {x: -0.000016359354, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__10
+      parentName: Socket_for_animation__53_
+      position: {x: 49.999985, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__7
+      parentName: Socket_for_animation__53_
+      position: {x: 49.999985, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__10
+      parentName: Socket_for_animation__53_
+      position: {x: 37.499985, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__7
+      parentName: Socket_for_animation__53_
+      position: {x: 37.499985, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_7
+      parentName: Socket_for_animation__53_
+      position: {x: -11.800067, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__72_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.503621, z: 6.628395}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_11
+      parentName: Socket_for_animation__72_
+      position: {x: -0.00004447694, y: 0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__11
+      parentName: Socket_for_animation__72_
+      position: {x: 49.999958, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__8
+      parentName: Socket_for_animation__72_
+      position: {x: 49.999954, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__11
+      parentName: Socket_for_animation__72_
+      position: {x: 37.499958, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__8
+      parentName: Socket_for_animation__72_
+      position: {x: 37.499954, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_8
+      parentName: Socket_for_animation__72_
+      position: {x: -11.800095, y: 0.000061035156, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__54_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.503621, z: 6.6283913}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_12
+      parentName: Socket_for_animation__54_
+      position: {x: -0.000037586015, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__12
+      parentName: Socket_for_animation__54_
+      position: {x: 49.999966, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__9
+      parentName: Socket_for_animation__54_
+      position: {x: 49.99996, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__12
+      parentName: Socket_for_animation__54_
+      position: {x: 37.499966, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__9
+      parentName: Socket_for_animation__54_
+      position: {x: 37.49996, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_9
+      parentName: Socket_for_animation__54_
+      position: {x: -11.800088, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__55_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036225, z: -6.8333893}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_13
+      parentName: Socket_for_animation__55_
+      position: {x: -0.00006537783, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__13
+      parentName: Socket_for_animation__55_
+      position: {x: 49.999935, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__10
+      parentName: Socket_for_animation__55_
+      position: {x: 49.999935, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__13
+      parentName: Socket_for_animation__55_
+      position: {x: 37.499935, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__10
+      parentName: Socket_for_animation__55_
+      position: {x: 37.499935, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_10
+      parentName: Socket_for_animation__55_
+      position: {x: -11.800116, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__56_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036225, z: -6.833393}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_14
+      parentName: Socket_for_animation__56_
+      position: {x: -0.00005848691, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__14
+      parentName: Socket_for_animation__56_
+      position: {x: 49.999943, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__11
+      parentName: Socket_for_animation__56_
+      position: {x: 49.999943, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__14
+      parentName: Socket_for_animation__56_
+      position: {x: 37.499943, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__11
+      parentName: Socket_for_animation__56_
+      position: {x: 37.49994, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_11
+      parentName: Socket_for_animation__56_
+      position: {x: -11.800109, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__57_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.5036197, z: 17.687492}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_15
+      parentName: Socket_for_animation__57_
+      position: {x: -0.000027306478, y: 0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__15
+      parentName: Socket_for_animation__57_
+      position: {x: 49.999973, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__12
+      parentName: Socket_for_animation__57_
+      position: {x: 49.999973, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__15
+      parentName: Socket_for_animation__57_
+      position: {x: 37.499973, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__12
+      parentName: Socket_for_animation__57_
+      position: {x: 37.499973, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_12
+      parentName: Socket_for_animation__57_
+      position: {x: -11.800077, y: 0.000061035156, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__58_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.5036197, z: 17.687489}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_16
+      parentName: Socket_for_animation__58_
+      position: {x: -0.000020415555, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__16
+      parentName: Socket_for_animation__58_
+      position: {x: 49.99998, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__13
+      parentName: Socket_for_animation__58_
+      position: {x: 49.99998, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__16
+      parentName: Socket_for_animation__58_
+      position: {x: 37.49998, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__13
+      parentName: Socket_for_animation__58_
+      position: {x: 37.499977, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_13
+      parentName: Socket_for_animation__58_
+      position: {x: -11.800071, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__73_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.503621, z: 4.0159187}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_17
+      parentName: Socket_for_animation__73_
+      position: {x: -0.000048533097, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__17
+      parentName: Socket_for_animation__73_
+      position: {x: 49.999954, y: -0.000061035156, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__14
+      parentName: Socket_for_animation__73_
+      position: {x: 49.99995, y: -0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__17
+      parentName: Socket_for_animation__73_
+      position: {x: 37.499954, y: -0.000061035156, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__14
+      parentName: Socket_for_animation__73_
+      position: {x: 37.49995, y: -0.000061035156, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_14
+      parentName: Socket_for_animation__73_
+      position: {x: -11.800099, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__59_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.503621, z: 4.015915}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_18
+      parentName: Socket_for_animation__59_
+      position: {x: -0.00004164217, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__18
+      parentName: Socket_for_animation__59_
+      position: {x: 49.999958, y: -0.000061035156, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__15
+      parentName: Socket_for_animation__59_
+      position: {x: 49.999958, y: -0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__18
+      parentName: Socket_for_animation__59_
+      position: {x: 37.49996, y: -0.000061035156, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__15
+      parentName: Socket_for_animation__59_
+      position: {x: 37.499958, y: -0.000061035156, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_15
+      parentName: Socket_for_animation__59_
+      position: {x: -11.800092, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__60_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036225, z: -9.445877}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_19
+      parentName: Socket_for_animation__60_
+      position: {x: -0.00006943401, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__19
+      parentName: Socket_for_animation__60_
+      position: {x: 49.99993, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__16
+      parentName: Socket_for_animation__60_
+      position: {x: 49.99993, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__19
+      parentName: Socket_for_animation__60_
+      position: {x: 37.49993, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__16
+      parentName: Socket_for_animation__60_
+      position: {x: 37.49993, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_16
+      parentName: Socket_for_animation__60_
+      position: {x: -11.80012, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__43_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.503624, z: -20.687717}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_20
+      parentName: Socket_for_animation__43_
+      position: {x: -0.000086888205, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__20
+      parentName: Socket_for_animation__43_
+      position: {x: 49.999916, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__17
+      parentName: Socket_for_animation__43_
+      position: {x: 49.999912, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__20
+      parentName: Socket_for_animation__43_
+      position: {x: 37.499916, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__17
+      parentName: Socket_for_animation__43_
+      position: {x: 37.499912, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_17
+      parentName: Socket_for_animation__43_
+      position: {x: -11.8001375, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__61_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036225, z: -9.445881}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_21
+      parentName: Socket_for_animation__61_
+      position: {x: -0.000062543084, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__21
+      parentName: Socket_for_animation__61_
+      position: {x: 49.99994, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__18
+      parentName: Socket_for_animation__61_
+      position: {x: 49.99994, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__21
+      parentName: Socket_for_animation__61_
+      position: {x: 37.49994, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__18
+      parentName: Socket_for_animation__61_
+      position: {x: 37.499935, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_18
+      parentName: Socket_for_animation__61_
+      position: {x: -11.800113, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__44_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.503624, z: -20.687717}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_22
+      parentName: Socket_for_animation__44_
+      position: {x: -0.00007999728, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__22
+      parentName: Socket_for_animation__44_
+      position: {x: 49.99992, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__19
+      parentName: Socket_for_animation__44_
+      position: {x: 49.99992, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__22
+      parentName: Socket_for_animation__44_
+      position: {x: 37.499924, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__19
+      parentName: Socket_for_animation__44_
+      position: {x: 37.49992, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_19
+      parentName: Socket_for_animation__44_
+      position: {x: -11.800131, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__79_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.5036206, z: 12.320396}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_23
+      parentName: Socket_for_animation__79_
+      position: {x: -0.00003563948, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__23
+      parentName: Socket_for_animation__79_
+      position: {x: 49.999966, y: -0.000061035156, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__20
+      parentName: Socket_for_animation__79_
+      position: {x: 49.999966, y: -0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__23
+      parentName: Socket_for_animation__79_
+      position: {x: 37.499966, y: -0.000061035156, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__20
+      parentName: Socket_for_animation__79_
+      position: {x: 37.49996, y: -0.000061035156, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_20
+      parentName: Socket_for_animation__79_
+      position: {x: -11.800086, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__45_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.5036206, z: 12.320393}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_24
+      parentName: Socket_for_animation__45_
+      position: {x: -0.00002874856, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__24
+      parentName: Socket_for_animation__45_
+      position: {x: 49.999973, y: -0.000061035156, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__21
+      parentName: Socket_for_animation__45_
+      position: {x: 49.99997, y: -0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__24
+      parentName: Socket_for_animation__45_
+      position: {x: 37.499973, y: -0.000061035156, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__21
+      parentName: Socket_for_animation__45_
+      position: {x: 37.49997, y: -0.000061035156, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_21
+      parentName: Socket_for_animation__45_
+      position: {x: -11.800079, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__62_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.503622, z: -1.3512077}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_25
+      parentName: Socket_for_animation__62_
+      position: {x: -0.00005686615, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__25
+      parentName: Socket_for_animation__62_
+      position: {x: 49.999943, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__22
+      parentName: Socket_for_animation__62_
+      position: {x: 49.999943, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__25
+      parentName: Socket_for_animation__62_
+      position: {x: 37.499947, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__22
+      parentName: Socket_for_animation__62_
+      position: {x: 37.499943, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_22
+      parentName: Socket_for_animation__62_
+      position: {x: -11.800107, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__63_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.503622, z: -1.3512115}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_26
+      parentName: Socket_for_animation__63_
+      position: {x: -0.000049975224, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__26
+      parentName: Socket_for_animation__63_
+      position: {x: 49.99995, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__23
+      parentName: Socket_for_animation__63_
+      position: {x: 49.99995, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__26
+      parentName: Socket_for_animation__63_
+      position: {x: 37.49995, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__23
+      parentName: Socket_for_animation__63_
+      position: {x: 37.49995, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_23
+      parentName: Socket_for_animation__63_
+      position: {x: -11.8001, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__80_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036235, z: -14.812992}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_27
+      parentName: Socket_for_animation__80_
+      position: {x: -0.000077767036, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__27
+      parentName: Socket_for_animation__80_
+      position: {x: 49.999924, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__24
+      parentName: Socket_for_animation__80_
+      position: {x: 49.999924, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__27
+      parentName: Socket_for_animation__80_
+      position: {x: 37.499924, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__24
+      parentName: Socket_for_animation__80_
+      position: {x: 37.49992, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_24
+      parentName: Socket_for_animation__80_
+      position: {x: -11.800128, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__46_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036244, z: -26.054844}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_28
+      parentName: Socket_for_animation__46_
+      position: {x: 0.00002684907, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__28
+      parentName: Socket_for_animation__46_
+      position: {x: 50.000027, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__25
+      parentName: Socket_for_animation__46_
+      position: {x: 50.000027, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__28
+      parentName: Socket_for_animation__46_
+      position: {x: 37.50003, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__25
+      parentName: Socket_for_animation__46_
+      position: {x: 37.500027, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_25
+      parentName: Socket_for_animation__46_
+      position: {x: -11.800024, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__64_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036235, z: -14.812992}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_29
+      parentName: Socket_for_animation__64_
+      position: {x: -0.00007087611, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__29
+      parentName: Socket_for_animation__64_
+      position: {x: 49.99993, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__26
+      parentName: Socket_for_animation__64_
+      position: {x: 49.999928, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__29
+      parentName: Socket_for_animation__64_
+      position: {x: 37.49993, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__26
+      parentName: Socket_for_animation__64_
+      position: {x: 37.499928, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_26
+      parentName: Socket_for_animation__64_
+      position: {x: -11.800121, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__65_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036244, z: -26.054844}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_30
+      parentName: Socket_for_animation__65_
+      position: {x: 0.000033739998, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__30
+      parentName: Socket_for_animation__65_
+      position: {x: 50.000034, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__27
+      parentName: Socket_for_animation__65_
+      position: {x: 50.000034, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__30
+      parentName: Socket_for_animation__65_
+      position: {x: 37.500034, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__27
+      parentName: Socket_for_animation__65_
+      position: {x: 37.500034, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_27
+      parentName: Socket_for_animation__65_
+      position: {x: -11.800016, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__81_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.50362, z: 14.905811}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_31
+      parentName: Socket_for_animation__81_
+      position: {x: -0.000031625343, y: 0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__31
+      parentName: Socket_for_animation__81_
+      position: {x: 49.99997, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__28
+      parentName: Socket_for_animation__81_
+      position: {x: 49.99997, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__31
+      parentName: Socket_for_animation__81_
+      position: {x: 37.49997, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__28
+      parentName: Socket_for_animation__81_
+      position: {x: 37.49997, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_28
+      parentName: Socket_for_animation__81_
+      position: {x: -11.800082, y: 0.000061035156, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__47_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.50362, z: 14.9058075}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_32
+      parentName: Socket_for_animation__47_
+      position: {x: -0.000024734421, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__32
+      parentName: Socket_for_animation__47_
+      position: {x: 49.999977, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__29
+      parentName: Socket_for_animation__47_
+      position: {x: 49.999977, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__32
+      parentName: Socket_for_animation__47_
+      position: {x: 37.499977, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__29
+      parentName: Socket_for_animation__47_
+      position: {x: 37.499973, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_29
+      parentName: Socket_for_animation__47_
+      position: {x: -11.800076, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__66_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036216, z: 1.2342224}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_33
+      parentName: Socket_for_animation__66_
+      position: {x: -0.00005285199, y: 0.00012207031, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__33
+      parentName: Socket_for_animation__66_
+      position: {x: 49.99995, y: 0.00012207031, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__30
+      parentName: Socket_for_animation__66_
+      position: {x: 49.999947, y: 0.00012207031, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__33
+      parentName: Socket_for_animation__66_
+      position: {x: 37.49995, y: 0.00012207031, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__30
+      parentName: Socket_for_animation__66_
+      position: {x: 37.499947, y: 0.00012207031, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_30
+      parentName: Socket_for_animation__66_
+      position: {x: -11.800103, y: 0.00012207031, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__67_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036216, z: 1.2342186}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_34
+      parentName: Socket_for_animation__67_
+      position: {x: -0.000045961064, y: 0.00012207031, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__34
+      parentName: Socket_for_animation__67_
+      position: {x: 49.999954, y: 0.00012207031, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__31
+      parentName: Socket_for_animation__67_
+      position: {x: 49.999954, y: 0.00012207031, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__34
+      parentName: Socket_for_animation__67_
+      position: {x: 37.499958, y: 0.00012207031, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__31
+      parentName: Socket_for_animation__67_
+      position: {x: 37.499954, y: 0.00012207031, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_31
+      parentName: Socket_for_animation__67_
+      position: {x: -11.8000965, y: 0.00012207031, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__82_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.503623, z: -12.227558}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_35
+      parentName: Socket_for_animation__82_
+      position: {x: -0.000073752875, y: -0.00024414062, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__35
+      parentName: Socket_for_animation__82_
+      position: {x: 49.999928, y: -0.00024414062, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__32
+      parentName: Socket_for_animation__82_
+      position: {x: 49.999928, y: -0.00024414062, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__35
+      parentName: Socket_for_animation__82_
+      position: {x: 37.499928, y: -0.00024414062, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__32
+      parentName: Socket_for_animation__82_
+      position: {x: 37.499924, y: -0.00024414062, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_32
+      parentName: Socket_for_animation__82_
+      position: {x: -11.800124, y: -0.00024414062, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__48_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.503624, z: -23.469402}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_36
+      parentName: Socket_for_animation__48_
+      position: {x: 0.000030863244, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__36
+      parentName: Socket_for_animation__48_
+      position: {x: 50.00003, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__33
+      parentName: Socket_for_animation__48_
+      position: {x: 50.00003, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__36
+      parentName: Socket_for_animation__48_
+      position: {x: 37.500034, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__33
+      parentName: Socket_for_animation__48_
+      position: {x: 37.50003, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_33
+      parentName: Socket_for_animation__48_
+      position: {x: -11.800019, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__68_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.503623, z: -12.227562}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_37
+      parentName: Socket_for_animation__68_
+      position: {x: -0.00006686195, y: -0.00024414062, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__37
+      parentName: Socket_for_animation__68_
+      position: {x: 49.999935, y: -0.00024414062, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__34
+      parentName: Socket_for_animation__68_
+      position: {x: 49.99993, y: -0.00024414062, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__37
+      parentName: Socket_for_animation__68_
+      position: {x: 37.499935, y: -0.00024414062, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__34
+      parentName: Socket_for_animation__68_
+      position: {x: 37.49993, y: -0.00024414062, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_34
+      parentName: Socket_for_animation__68_
+      position: {x: -11.8001175, y: -0.00024414062, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__69_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.503624, z: -23.469402}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_38
+      parentName: Socket_for_animation__69_
+      position: {x: 0.000037754173, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__38
+      parentName: Socket_for_animation__69_
+      position: {x: 50.00004, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__35
+      parentName: Socket_for_animation__69_
+      position: {x: 50.00004, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__38
+      parentName: Socket_for_animation__69_
+      position: {x: 37.50004, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__35
+      parentName: Socket_for_animation__69_
+      position: {x: 37.50004, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_35
+      parentName: Socket_for_animation__69_
+      position: {x: -11.800013, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__74_
+      parentName: Sockets_Tray
+      position: {x: 9.315685, y: 4.5036206, z: 9.5387}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_39
+      parentName: Socket_for_animation__74_
+      position: {x: -0.000039958373, y: 0.000061035156, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__39
+      parentName: Socket_for_animation__74_
+      position: {x: 49.99996, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__36
+      parentName: Socket_for_animation__74_
+      position: {x: 49.99996, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__39
+      parentName: Socket_for_animation__74_
+      position: {x: 37.49996, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__36
+      parentName: Socket_for_animation__74_
+      position: {x: 37.499958, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_36
+      parentName: Socket_for_animation__74_
+      position: {x: -11.800091, y: 0.000061035156, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__70_
+      parentName: Sockets_Tray
+      position: {x: -1.3213272, y: 4.5036206, z: 9.538696}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_40
+      parentName: Socket_for_animation__70_
+      position: {x: -0.00003306745, y: 0.000061035156, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__40
+      parentName: Socket_for_animation__70_
+      position: {x: 49.99997, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__37
+      parentName: Socket_for_animation__70_
+      position: {x: 49.999966, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__40
+      parentName: Socket_for_animation__70_
+      position: {x: 37.49997, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__37
+      parentName: Socket_for_animation__70_
+      position: {x: 37.499966, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_37
+      parentName: Socket_for_animation__70_
+      position: {x: -11.800083, y: 0.000061035156, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__83_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.503622, z: -4.132904}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_41
+      parentName: Socket_for_animation__83_
+      position: {x: -0.00006118504, y: 0.00012207031, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__41
+      parentName: Socket_for_animation__83_
+      position: {x: 49.99994, y: 0.00012207031, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__38
+      parentName: Socket_for_animation__83_
+      position: {x: 49.99994, y: 0.00012207031, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__41
+      parentName: Socket_for_animation__83_
+      position: {x: 37.499943, y: 0.00012207031, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__38
+      parentName: Socket_for_animation__83_
+      position: {x: 37.49994, y: 0.00012207031, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_38
+      parentName: Socket_for_animation__83_
+      position: {x: -11.800112, y: 0.00012207031, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__71_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.503622, z: -4.132908}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_42
+      parentName: Socket_for_animation__71_
+      position: {x: -0.000054294116, y: 0.00012207031, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__42
+      parentName: Socket_for_animation__71_
+      position: {x: 49.999947, y: 0.00012207031, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__39
+      parentName: Socket_for_animation__71_
+      position: {x: 49.999947, y: 0.00012207031, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__42
+      parentName: Socket_for_animation__71_
+      position: {x: 37.499947, y: 0.00012207031, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__39
+      parentName: Socket_for_animation__71_
+      position: {x: 37.499947, y: 0.00012207031, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_39
+      parentName: Socket_for_animation__71_
+      position: {x: -11.800105, y: 0.00012207031, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__75_
+      parentName: Sockets_Tray
+      position: {x: 9.315689, y: 4.5036235, z: -17.594685}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_43
+      parentName: Socket_for_animation__75_
+      position: {x: -0.00008208593, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__43
+      parentName: Socket_for_animation__75_
+      position: {x: 49.99992, y: 0, z: 49.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__40
+      parentName: Socket_for_animation__75_
+      position: {x: 49.999916, y: 0, z: -0.000061035156}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__43
+      parentName: Socket_for_animation__75_
+      position: {x: 37.49992, y: 0, z: 74.99994}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__40
+      parentName: Socket_for_animation__75_
+      position: {x: 37.499916, y: 0, z: -25.000061}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_40
+      parentName: Socket_for_animation__75_
+      position: {x: -11.800133, y: 0, z: -54.344055}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Socket_for_animation__76_
+      parentName: Sockets_Tray
+      position: {x: -1.3213234, y: 4.5036235, z: -17.594685}
+      rotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.49999997}
+      scale: {x: 0.06747407, y: 0.048626475, z: 0.0466279}
+    - name: Cube_44
+      parentName: Socket_for_animation__76_
+      position: {x: -0.000075195, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 2}
+    - name: Cube__5__44
+      parentName: Socket_for_animation__76_
+      position: {x: 49.999928, y: 0, z: 50}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__9__41
+      parentName: Socket_for_animation__76_
+      position: {x: 49.999924, y: 0, z: 0}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.25, y: 0.25, z: 0.25}
+    - name: Cube__4__44
+      parentName: Socket_for_animation__76_
+      position: {x: 37.499928, y: 0, z: 75}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Cube__8__41
+      parentName: Socket_for_animation__76_
+      position: {x: 37.499924, y: 0, z: -25}
+      rotation: {x: 1.3121387e-17, y: 0, z: -0, w: 1}
+      scale: {x: 0.5, y: 0.25, z: 0.25}
+    - name: Pick_up_point_41
+      parentName: Socket_for_animation__76_
+      position: {x: -11.800126, y: 0, z: -54.343933}
+      rotation: {x: 0.5, y: -0.49999997, z: 0.5, w: 0.5}
+      scale: {x: 13.918584, y: 13.918589, z: 13.918584}
+    - name: Cube
+      parentName: Work_Bench__2_
+      position: {x: -68.98, y: 78.10999, z: -90.74351}
+      rotation: {x: -4.3024573e-16, y: 8.77995e-16, z: 1.02501557e-22, w: 1}
+      scale: {x: 0.50579923, y: 0.92235255, z: 0.5938402}
+    - name: Cube__1_
+      parentName: Work_Bench__2_
+      position: {x: -116.91444, y: 78.10999, z: -66.11}
+      rotation: {x: -1.925898e-15, y: 1.9336648e-15, z: 5.016898e-23, w: 1}
+      scale: {x: 0.53129745, y: 0.92235255, z: 0.10113099}
+    - name: Cube__2_
+      parentName: Work_Bench__2_
+      position: {x: -116.91444, y: 78.10999, z: -115.51}
+      rotation: {x: -1.925898e-15, y: 1.9336648e-15, z: 5.016898e-23, w: 1}
+      scale: {x: 0.53129745, y: 0.92235255, z: 0.10113099}
+    - name: Cube__4_
+      parentName: Work_Bench__2_
+      position: {x: -140.45444, y: 78.10999, z: -90.74351}
+      rotation: {x: -4.3024573e-16, y: 1.110223e-15, z: 1.1634343e-22, w: 1}
+      scale: {x: 0.1, y: 0.92235255, z: 0.5938402}
+    - name: Cube__5_
+      parentName: Work_Bench__2_
+      position: {x: -77.48414, y: 71.29, z: -150.07}
+      rotation: {x: 1.2282994e-16, y: 2.9836416e-15, z: 1.6695103e-22, w: 1}
+      scale: {x: 0.45331934, y: 0.92235255, z: 0.43352678}
+    - name: Cube__6_
+      parentName: Work_Bench__2_
+      position: {x: -22.353615, y: 78.10999, z: -91.38}
+      rotation: {x: -1.925898e-15, y: 2.3153574e-15, z: 1.4215531e-22, w: 1}
+      scale: {x: 0.5755155, y: 0.92235255, z: 2.3007336}
+    - name: Cube__7_
+      parentName: Work_Bench__2_
+      position: {x: -71.20001, y: 122.88796, z: -90.74351}
+      rotation: {x: -3.8617604e-15, y: 2.2284086e-15, z: 2.3756603e-22, w: 1}
+      scale: {x: 0.37240285, y: 0.062025826, z: 0.42869407}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
