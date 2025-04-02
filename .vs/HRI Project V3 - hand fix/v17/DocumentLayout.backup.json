@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9555030-30C0-C195-2670-254FA8D5D436}|Assembly-CSharp.csproj|C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\assets\\scripts\\participantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D9555030-30C0-C195-2670-254FA8D5D436}|Assembly-CSharp.csproj|c:\\users\\ayesh\\documents\\research\\unityprojects\\hri project v3 - hand fix\\assets\\scripts\\participantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9555030-30C0-C195-2670-254FA8D5D436}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\participantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -62,8 +62,7 @@
               "RelativeToolTip": "Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.11\\Shaders\\Lit.shader",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-04-02T01:54:10.586Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T01:54:10.586Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ForemanTutorialController.cs",
               "ViewState": "AgIAAHAAAAAAAAAAAAAkwJcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T00:59:05.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T00:59:05.098Z"
             },
             {
               "$type": "Document",
@@ -86,7 +84,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\ParticipantManager.cs",
               "ToolTip": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\ParticipantManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\ParticipantManager.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAA/wMsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAADwv7EAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T22:17:20.273Z",
               "EditorCaption": ""
@@ -137,8 +135,7 @@
               "RelativeToolTip": "Assets\\Scripts\\RuntimeMaterialChange.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAwwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T20:27:53.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T20:27:53.322Z"
             },
             {
               "$type": "Document",
@@ -162,8 +159,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MoveIKTarget.cs",
               "ViewState": "AgIAADABAAAAAAAAAAA8wOkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T15:26:47.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T15:26:47.913Z"
             },
             {
               "$type": "Document",

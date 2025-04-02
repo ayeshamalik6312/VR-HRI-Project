@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Library\\PackageCache\\com.meta.xr.sdk.interaction@68.0.1\\Runtime\\Scripts\\Interaction\\Models\\Snap\\SnapInteractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.meta.xr.sdk.interaction@68.0.1\\Runtime\\Scripts\\Interaction\\Models\\Snap\\SnapInteractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D9555030-30C0-C195-2670-254FA8D5D436}|Assembly-CSharp.csproj|c:\\users\\ayesh\\documents\\research\\unityprojects\\hri project v3 - hand fix\\assets\\scripts\\participantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9555030-30C0-C195-2670-254FA8D5D436}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\participantmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "SnapInteractor.cs",
+              "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Library\\PackageCache\\com.meta.xr.sdk.interaction@68.0.1\\Runtime\\Scripts\\Interaction\\Models\\Snap\\SnapInteractor.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.meta.xr.sdk.interaction@68.0.1\\Runtime\\Scripts\\Interaction\\Models\\Snap\\SnapInteractor.cs",
+              "ToolTip": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Library\\PackageCache\\com.meta.xr.sdk.interaction@68.0.1\\Runtime\\Scripts\\Interaction\\Models\\Snap\\SnapInteractor.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.meta.xr.sdk.interaction@68.0.1\\Runtime\\Scripts\\Interaction\\Models\\Snap\\SnapInteractor.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAgwIAAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T12:57:17.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Lit.shader",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.11\\Shaders\\Lit.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.11\\Shaders\\Lit.shader",
@@ -66,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ForemanTutorialController.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\ForemanTutorialController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ForemanTutorialController.cs",
@@ -78,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ParticipantManager.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\ParticipantManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ParticipantManager.cs",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ParticipantManager.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\ParticipantManager.cs",
               "RelativeDocumentMoniker": "Assets\\ParticipantManager.cs",
@@ -103,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "InspectorNotes.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\InspectorNotes.cs",
               "RelativeDocumentMoniker": "Assets\\InspectorNotes.cs",
@@ -115,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GrabPhysics.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\GrabPhysics.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GrabPhysics.cs",
@@ -127,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "RuntimeMaterialChange.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\RuntimeMaterialChange.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RuntimeMaterialChange.cs",
@@ -139,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ButtonPress.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\ButtonPress.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ButtonPress.cs",
@@ -151,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MoveIKTarget.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\MoveIKTarget.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MoveIKTarget.cs",
@@ -163,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "IK_toolkit.cs",
               "DocumentMoniker": "C:\\Users\\ayesh\\Documents\\Research\\UnityProjects\\HRI Project V3 - hand fix\\Assets\\Scripts\\IK_toolkit.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\IK_toolkit.cs",
