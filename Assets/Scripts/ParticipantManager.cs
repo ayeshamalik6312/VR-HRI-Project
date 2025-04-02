@@ -16,13 +16,14 @@ public class ParticipantManager : MonoBehaviour
     public ForemanTutorialController characterController;
     public RuntimeMaterialChange materialChanger;
 
-
     public TMP_Text timerText;
     public TMP_Text currentPhaseText;
+    public TMP_Text warningMessage;
 
     private string filePath;
     private string[] conditionOrder = new string[3];
     private Coroutine timerCoroutine;
+    private bool hasActiveParticipant = false;
 
     void Start()
     {
@@ -30,7 +31,6 @@ public class ParticipantManager : MonoBehaviour
         if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
 
         filePath = Path.Combine(dir, "participants.csv");
-
         if (!File.Exists(filePath))
             File.WriteAllText(filePath, "ID,Baseline,AugOnPrompt,Continuous\n");
 
@@ -46,7 +46,15 @@ public class ParticipantManager : MonoBehaviour
     void OnInputChanged(string id)
     {
         if (!string.IsNullOrWhiteSpace(id))
+        {
+            hasActiveParticipant = true;
+            warningMessage.gameObject.SetActive(false);
             LoadOrCreateParticipant(id.Trim());
+        }
+        else
+        {
+            hasActiveParticipant = false;
+        }
     }
 
     void LoadOrCreateParticipant(string id)
@@ -65,10 +73,11 @@ public class ParticipantManager : MonoBehaviour
                     SetDropdownValueFromText(augOnPromptDropdown, values[2]);
                     SetDropdownValueFromText(continuousAugDropdown, values[3]);
 
-                    conditionOrder = new string[3];
-                    conditionOrder[int.Parse(values[1]) - 1] = "Baseline";
-                    conditionOrder[int.Parse(values[2]) - 1] = "AugOnPrompt";
-                    conditionOrder[int.Parse(values[3]) - 1] = "Continuous";
+                    int.TryParse(values[1], out int baselineVal);
+                    int.TryParse(values[2], out int augVal);
+                    int.TryParse(values[3], out int contVal);
+                    UpdateConditionOrder(baselineVal, augVal, contVal);
+
                     found = true;
                 }
                 break;
@@ -83,6 +92,7 @@ public class ParticipantManager : MonoBehaviour
             baselineDropdown.RefreshShownValue();
             augOnPromptDropdown.RefreshShownValue();
             continuousAugDropdown.RefreshShownValue();
+            conditionOrder = new string[3];
         }
     }
 
@@ -92,20 +102,18 @@ public class ParticipantManager : MonoBehaviour
         if (string.IsNullOrEmpty(id)) return;
 
         string baselineText = baselineDropdown.options[baselineDropdown.value].text;
-        string augOnPromptText = augOnPromptDropdown.options[augOnPromptDropdown.value].text;
-        string continuousText = continuousAugDropdown.options[continuousAugDropdown.value].text;
+        string augText = augOnPromptDropdown.options[augOnPromptDropdown.value].text;
+        string contText = continuousAugDropdown.options[continuousAugDropdown.value].text;
 
-        bool validBaseline = int.TryParse(baselineText, out int baselineVal);
-        bool validAugPrompt = int.TryParse(augOnPromptText, out int augOnPromptVal);
-        bool validContinuous = int.TryParse(continuousText, out int continuousVal);
-
-        if (!validBaseline || !validAugPrompt || !validContinuous)
+        if (!int.TryParse(baselineText, out int baselineVal) ||
+            !int.TryParse(augText, out int augVal) ||
+            !int.TryParse(contText, out int contVal))
         {
-            Debug.LogWarning("One or more dropdowns are not valid integers. Participant data not saved.");
+            Debug.LogWarning("Invalid dropdown values");
             return;
         }
 
-        List<string> updatedLines = new List<string>();
+        List<string> updatedLines = new();
         bool updated = false;
         string[] lines = File.ReadAllLines(filePath);
 
@@ -113,7 +121,7 @@ public class ParticipantManager : MonoBehaviour
         {
             if (line.StartsWith(id + ","))
             {
-                updatedLines.Add($"{id},{baselineVal},{augOnPromptVal},{continuousVal}");
+                updatedLines.Add($"{id},{baselineVal},{augVal},{contVal}");
                 updated = true;
             }
             else
@@ -123,9 +131,19 @@ public class ParticipantManager : MonoBehaviour
         }
 
         if (!updated)
-            updatedLines.Add($"{id},{baselineVal},{augOnPromptVal},{continuousVal}");
+            updatedLines.Add($"{id},{baselineVal},{augVal},{contVal}");
 
         File.WriteAllLines(filePath, updatedLines.ToArray());
+
+        UpdateConditionOrder(baselineVal, augVal, contVal);
+    }
+
+    void UpdateConditionOrder(int baselineVal, int augVal, int contVal)
+    {
+        conditionOrder = new string[3];
+        if (baselineVal >= 1 && baselineVal <= 3) conditionOrder[baselineVal - 1] = "Baseline";
+        if (augVal >= 1 && augVal <= 3) conditionOrder[augVal - 1] = "AugOnPrompt";
+        if (contVal >= 1 && contVal <= 3) conditionOrder[contVal - 1] = "Continuous";
     }
 
     void SetDropdownValueFromText(TMP_Dropdown dropdown, string text)
@@ -137,17 +155,56 @@ public class ParticipantManager : MonoBehaviour
 
     public void LaunchTutorialAndCondition1()
     {
+        if (!hasActiveParticipant)
+        {
+            ShowWarning("Please enter Participant ID");
+            return;
+        }
+        if (!IsConditionValid(0)) return;
+
         StartCoroutine(RunTutorialAndCondition(0));
     }
 
     public void LaunchCondition2()
     {
+        if (!hasActiveParticipant)
+        {
+            ShowWarning("Please enter Participant ID");
+            return;
+        }
+        if (!IsConditionValid(1)) return;
+
         RunCondition(conditionOrder[1]);
     }
 
     public void LaunchCondition3()
     {
+        if (!hasActiveParticipant)
+        {
+            ShowWarning("Please enter Participant ID");
+            return;
+        }
+        if (!IsConditionValid(2)) return;
+
         RunCondition(conditionOrder[2]);
+    }
+
+    private bool IsConditionValid(int index)
+    {
+        if (index < 0 || index >= conditionOrder.Length)
+        {
+            ShowWarning("Invalid condition index");
+            return false;
+        }
+
+        string val = conditionOrder[index];
+        if (string.IsNullOrEmpty(val) || !(val == "Baseline" || val == "AugOnPrompt" || val == "Continuous"))
+        {
+            ShowWarning("Please enter valid condition order");
+            return false;
+        }
+
+        return true;
     }
 
     private IEnumerator RunTutorialAndCondition(int conditionIndex)
@@ -163,7 +220,7 @@ public class ParticipantManager : MonoBehaviour
     {
         if (overlayObject == null || materialChanger == null)
         {
-            Debug.LogError("Overlay object or materialChanger not assigned.");
+            Debug.LogError("Overlay or MaterialChanger missing.");
             return;
         }
 
@@ -176,32 +233,23 @@ public class ParticipantManager : MonoBehaviour
                 overlayObject.SetActive(false);
                 materialChanger.DeactivateOverlay();
                 break;
-
             case "AugOnPrompt":
                 overlayObject.SetActive(true);
                 overlayObject.tag = "AR";
                 materialChanger.ActivatePromptOverlay(overlayObject);
                 break;
-
             case "Continuous":
                 overlayObject.SetActive(true);
                 overlayObject.tag = "ARcontinuous";
                 materialChanger.ActivateContinuousOverlay(overlayObject);
                 break;
-
-            default:
-                Debug.LogWarning("Unknown condition name: " + conditionName);
-                break;
         }
 
-        if (currentPhaseText)
-            currentPhaseText.text = conditionName;
+        if (currentPhaseText) currentPhaseText.text = conditionName;
 
-        if (timerCoroutine != null)
-            StopCoroutine(timerCoroutine);
-        timerCoroutine = StartCoroutine(StartTimer(600)); // 10 mins
+        if (timerCoroutine != null) StopCoroutine(timerCoroutine);
+        timerCoroutine = StartCoroutine(StartTimer(600));
     }
-
 
     private IEnumerator StartTimer(int seconds)
     {
@@ -211,13 +259,45 @@ public class ParticipantManager : MonoBehaviour
             int minutes = remaining / 60;
             int secs = remaining % 60;
             if (timerText)
-                timerText.text = minutes.ToString("D2") + ":" + secs.ToString("D2");
+                timerText.text = $"{minutes:D2}:{secs:D2}";
             yield return new WaitForSeconds(1);
             remaining--;
         }
 
-        if (timerText)
-            timerText.text = "00:00";
-        currentPhaseText.text = "Idle";
+        if (timerText) timerText.text = "00:00";
+        if (currentPhaseText) currentPhaseText.text = "Idle";
+    }
+
+    private void ShowWarning(string message)
+    {
+        if (warningMessage != null)
+        {
+            warningMessage.text = message;
+            warningMessage.alpha = 1f;
+            warningMessage.gameObject.SetActive(true);
+            StartCoroutine(FadeOutWarning());
+        }
+    }
+
+    private IEnumerator FadeOutWarning()
+    {
+        float waitTime = 1.5f;
+        float fadeDuration = 0.25f;
+
+        yield return new WaitForSeconds(waitTime);
+
+        float elapsed = 0f;
+        Color originalColor = warningMessage.color;
+
+        while (elapsed < fadeDuration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
+            warningMessage.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        warningMessage.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+        warningMessage.gameObject.SetActive(false);
     }
 }

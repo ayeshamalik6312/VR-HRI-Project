@@ -73,7 +73,7 @@ public class ForemanTutorialController : MonoBehaviour
     {
         tutorialRunning = true;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         foremanAnimator.SetTrigger("StartWalk");
         doorAnimator.SetTrigger("OpenDoor");

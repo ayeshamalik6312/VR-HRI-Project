@@ -1,16 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class RuntimeMaterialChange : MonoBehaviour
 {
     public Material targetMaterial;
 
     private Dictionary<GameObject, Material[]> originalMaterials = new();
+    private List<GameObject> arTargets = new(); // Active overlay objects to manage
+
     private MoveIKTarget moveIKTargetScript;
     private MoveIKTarget.State previousState;
-
-    private List<GameObject> arTargets = new(); // Used dynamically for both modes
 
     private void Start()
     {
@@ -23,8 +22,11 @@ public class RuntimeMaterialChange : MonoBehaviour
     {
         if (moveIKTargetScript == null) return;
 
+        // Only applies to Augmentation on Prompt
         if (moveIKTargetScript.state == MoveIKTarget.State.Connect && previousState != MoveIKTarget.State.Connect)
         {
+            Debug.Log("MaterialChange: CONNECT phase activated - Showing overlay + applying material");
+
             foreach (GameObject obj in arTargets)
             {
                 if (obj.TryGetComponent(out MeshRenderer renderer))
@@ -35,6 +37,8 @@ public class RuntimeMaterialChange : MonoBehaviour
         }
         else if (moveIKTargetScript.state != MoveIKTarget.State.Connect && previousState == MoveIKTarget.State.Connect)
         {
+            Debug.Log("MaterialChange: Exited CONNECT phase - Hiding overlay + reverting material");
+
             foreach (GameObject obj in arTargets)
             {
                 if (obj.TryGetComponent(out MeshRenderer renderer))
@@ -47,35 +51,43 @@ public class RuntimeMaterialChange : MonoBehaviour
         previousState = moveIKTargetScript.state;
     }
 
-    public void ActivateContinuousOverlay(GameObject root)
+    public void ActivatePromptOverlay(GameObject root)
     {
+        Debug.Log("MaterialChange: Activating PROMPT Overlay");
         arTargets.Clear();
         SearchOverlayChildren(arTargets, root, "Socket");
 
-        foreach (var t in arTargets)
+        foreach (var obj in arTargets)
         {
-            if (!originalMaterials.ContainsKey(t) && t.TryGetComponent(out Renderer renderer))
-                originalMaterials[t] = renderer.materials;
+            if (!originalMaterials.ContainsKey(obj) && obj.TryGetComponent(out Renderer renderer))
+                originalMaterials[obj] = renderer.materials;
+
+            if (obj.TryGetComponent(out MeshRenderer rendererTemp))
+                rendererTemp.enabled = false; // Initially hidden, shown during CONNECT
         }
     }
 
-    public void ActivatePromptOverlay(GameObject root)
+    public void ActivateContinuousOverlay(GameObject root)
     {
+        Debug.Log("MaterialChange: Activating CONTINUOUS Overlay");
         arTargets.Clear();
         SearchOverlayChildren(arTargets, root, "Socket");
 
-        foreach (var t in arTargets)
+        foreach (var obj in arTargets)
         {
-            if (!originalMaterials.ContainsKey(t) && t.TryGetComponent(out Renderer renderer))
-                originalMaterials[t] = renderer.materials;
+            if (!originalMaterials.ContainsKey(obj) && obj.TryGetComponent(out Renderer renderer))
+                originalMaterials[obj] = renderer.materials;
 
-            if (t.TryGetComponent(out MeshRenderer rendererTemp))
-                rendererTemp.enabled = false;
+            if (obj.TryGetComponent(out MeshRenderer rendererTemp))
+                rendererTemp.enabled = true;
+
+            ApplyMaterial(obj, targetMaterial);
         }
     }
 
     public void DeactivateOverlay()
     {
+        Debug.Log("MaterialChange: Deactivating Overlay");
         foreach (GameObject obj in arTargets)
         {
             if (obj != null)
@@ -90,7 +102,7 @@ public class RuntimeMaterialChange : MonoBehaviour
         arTargets.Clear();
     }
 
-    void SearchOverlayChildren(List<GameObject> result, GameObject parent, string excludeTag)
+    private void SearchOverlayChildren(List<GameObject> result, GameObject parent, string excludeTag)
     {
         foreach (Transform child in parent.transform)
         {
@@ -119,5 +131,15 @@ public class RuntimeMaterialChange : MonoBehaviour
         {
             renderer.materials = originalMaterials[obj];
         }
+    }
+
+    private void OnDestroy()
+    {
+        DeactivateOverlay(); // Restore everything on quit
+    }
+
+    private void OnApplicationQuit()
+    {
+        DeactivateOverlay(); // Restore everything on quit
     }
 }

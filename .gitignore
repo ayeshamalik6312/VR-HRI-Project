@@ -22,6 +22,7 @@ MemoryCaptures/
 *.VC.db
 *.blend
 *.blend1
+*.vs
 
 # Rider and VS Code settings
 .idea/
