@@ -187,26 +187,36 @@ public class MoveIKTarget : MonoBehaviour
                 tempPos = female.transform.position;
                 tempRot = female.transform.rotation;
 
-                female.transform.parent.parent = null;
-                Rigidbody rb = female.transform.parent.gameObject.AddComponent<Rigidbody>();
-                rb.isKinematic = false;
-                Rigidbody[] childRigidbodies = female.transform.parent.GetComponentsInChildren<Rigidbody>();
-                foreach (Rigidbody childRb in childRigidbodies)
+                Transform femaleParent = female.transform.parent;
+                if (femaleParent != null)
                 {
-                    childRb.isKinematic = false;
+                    femaleParent.parent = null;
+
+                    // Add rigidbody safely
+                    Rigidbody rb = femaleParent.gameObject.GetComponent<Rigidbody>();
+                    if (rb == null)
+                    {
+                        rb = femaleParent.gameObject.AddComponent<Rigidbody>();
+                    }
+                    rb.isKinematic = false;
+
+                    Rigidbody[] childRigidbodies = femaleParent.GetComponentsInChildren<Rigidbody>();
+                    foreach (Rigidbody childRb in childRigidbodies)
+                    {
+                        if (childRb != null)
+                            childRb.isKinematic = false;
+                    }
                 }
 
-                StartCoroutine(RemoveRigidbodiesAfterDelay(female.transform.parent.gameObject, 2f));
-
-
+                GameObject femaleToDestroy = female; // cache it
                 sockets.RemoveAt(socketsCurrSize - 1);
                 socketsCurrSize--;
-                Destroy(female);
-
                 switchDir = false;
-                GameObject tempObj = sockets[socketsCurrSize - 1];
-                if (tempObj != null)
-                    female = tempObj;
+
+                female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
+
+                if (femaleToDestroy != null)
+                    Destroy(femaleToDestroy);
             }
         }
         else

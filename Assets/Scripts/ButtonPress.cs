@@ -10,13 +10,13 @@ public class ButtonPress : MonoBehaviour
     public UnityEvent onRelease;
 
     GameObject presser;
-    AudioSource sound;
+    public AudioSource sound;
     bool isPressed;
     Vector3 originalPos;
 
     private void Start()
     {
-        // sound = GetComponent<AudioSource>();
+        sound = GetComponent<AudioSource>();
         isPressed = false;
         originalPos = button.transform.localPosition;
     }
@@ -28,7 +28,7 @@ public class ButtonPress : MonoBehaviour
             button.transform.localPosition = new Vector3(0, 0.003f, 0);
             presser = other.gameObject;
             onPress.Invoke();
-            //sound.Play();
+            sound.Play();
             isPressed = true;
         }
     }
