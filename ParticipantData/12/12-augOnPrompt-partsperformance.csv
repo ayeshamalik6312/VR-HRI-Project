@@ -1,0 +1,14 @@
+Timestamp,StructureCount,SnapOrientation,CycleTimeSeconds, ButtonPressed
+09:51,1,Correct,9.12,None
+09:54,1,Incorrect,6.95,None
+09:47,2,Correct,4.40,Good
+09:36,3,Incorrect,15.63,None
+09:28,4,Correct,6.21,Good
+09:55,1,Incorrect,5.52,None
+09:46,2,Correct,6.98,Good
+09:40,1,Correct,20.81,None
+09:33,2,Correct,4.73,Good
+08:54,3,Incorrect,43.66,None
+08:29,4,Correct,23.16,Good
+09:56,1,Incorrect,4.83,None
+09:48,2,Correct,7.71,Good

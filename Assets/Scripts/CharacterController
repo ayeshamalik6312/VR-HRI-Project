@@ -1,0 +1,144 @@
+using UnityEngine;
+using System.Collections;
+
+public class CharacterController : MonoBehaviour
+{
+    public Animator foremanAnimator;
+    public Animator doorAnimator;
+
+    public AudioSource tutorialAudio;       
+    public AudioSource tutorial2Audio;      
+    public AudioSource doorAudio;           
+
+    public Transform foremanLeftHand;
+    public Transform foremanRightHand;
+    public GameObject goodStructure;
+    public GameObject badStructure;
+
+    public Vector3 goodStructureOffset;
+    public Vector3 badStructureOffset;
+    public Vector3 badStructureSwitchOffset;
+    public Vector3 badStructureFinalOffset;
+
+    public Transform goodPieceTargetTransform;
+    public Transform badPieceTargetTransform;
+
+    private void Start()
+    {
+        StartCoroutine(CharacterSequence());
+    }
+
+    private IEnumerator CharacterSequence()
+    {
+        yield return new WaitForSeconds(5f);
+
+        // Step 1: Foreman enters the scene
+        foremanAnimator.SetTrigger("StartWalk");
+        doorAnimator.SetTrigger("OpenDoor");
+        PlayAudioSegment(doorAudio, 0f, 2f);
+        yield return new WaitForSeconds(2f);
+
+        // Step 2: Turn towards participant
+        foremanAnimator.SetTrigger("Turn");
+        yield return new WaitForSeconds(1f);
+
+        // Step 3: Start Tutorial Animation & Lip Sync
+        foremanAnimator.SetTrigger("StartTutorial");
+        tutorialAudio.Play();
+
+        // Step 4: Parent objects to foreman hands (Triggered via Animation Event)
+        yield return new WaitForSeconds(5f);
+        ParentObjectsToForeman();
+
+        // Step 5: Drop Good Piece
+        yield return new WaitForSeconds(2f);
+        DropPiece(goodStructure, goodPieceTargetTransform);
+
+        // Step 6: Switch Bad Piece Hand
+        yield return new WaitForSeconds(1f);
+        SwitchBadPieceHand();
+
+        // Step 7: Move Bad Piece to New Position
+        yield return new WaitForSeconds(2f);
+        TransitionPiece(badStructure, badStructureFinalOffset);
+
+        // Step 8: Drop Bad Piece
+        yield return new WaitForSeconds(2f);
+        DropPiece(badStructure, badPieceTargetTransform);
+
+        // Step 9: Signal End of Tutorial
+        yield return new WaitForSeconds(2f);
+        tutorial2Audio.Play();
+        foremanAnimator.Play("foremantut2", 0, 0f);
+
+        // Step 10: Exit Scene
+        yield return new WaitForSeconds(16f);
+        ExitScene();
+    }
+
+    // **Reusable Helper Function for Object Parenting**
+    private void ParentObjectsToForeman()
+    {
+        badStructure.transform.SetParent(foremanLeftHand);
+        goodStructure.transform.SetParent(foremanRightHand);
+
+        badStructure.transform.localPosition = badStructureOffset;
+        goodStructure.transform.localPosition = goodStructureOffset;
+    }
+
+    // **Reusable Helper Function for Smoothly Moving Objects**
+    private IEnumerator TransitionPiece(GameObject piece, Vector3 targetOffset)
+    {
+        Vector3 startPos = piece.transform.localPosition;
+        Quaternion startRot = piece.transform.localRotation;
+        float duration = 0.2f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            piece.transform.localPosition = Vector3.Lerp(startPos, targetOffset, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        piece.transform.localPosition = targetOffset;
+    }
+
+    // **Switches the Bad Piece to the Other Hand**
+    private void SwitchBadPieceHand()
+    {
+        badStructure.transform.SetParent(foremanRightHand, true);
+        badStructure.transform.localPosition = badStructureSwitchOffset;
+    }
+
+    // **Drops a Piece at a Target Location**
+    private void DropPiece(GameObject piece, Transform target)
+    {
+        piece.transform.SetParent(null);
+        StartCoroutine(TransitionPiece(piece, target.position));
+    }
+
+    // **Handles Foreman’s Exit Animation**
+    private void ExitScene()
+    {
+        foremanAnimator.Play("right turn reverse", 0, 0f);
+        doorAnimator.Play("door-open 0", 0, 0f);
+        PlayAudioSegment(doorAudio, 0f, 2f);
+        foremanAnimator.Play("standard walk", 0, 0f);
+    }
+
+    // **Plays an Audio Segment from Start to End Time**
+    private void PlayAudioSegment(AudioSource audioSource, float startTime, float endTime)
+    {
+        audioSource.time = startTime;
+        audioSource.Play();
+        StartCoroutine(StopAudioAfterDuration(audioSource, endTime - startTime));
+    }
+
+    private IEnumerator StopAudioAfterDuration(AudioSource audioSource, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        audioSource.Stop();
+    }
+}
