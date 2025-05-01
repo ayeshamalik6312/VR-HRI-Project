@@ -278,14 +278,12 @@ public class MoveIKTarget : MonoBehaviour
                 female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
 
                 // Report data
-                if (participantManager != null)
+                string button = ConsumeLastButtonPressed();
+                if (participantManager != null && (button == "Good" || button == "Bad"))
                 {
-                    participantManager.ReportSnap(
-                        true,
-                        GetCurrentCycleTime(),
-                        ConsumeLastButtonPressed()
-                    );
+                    participantManager.ReportSnap(true, GetCurrentCycleTime(), button);
                 }
+
 
                 if (femaleToDestroy != null)
                 {

@@ -84,14 +84,6 @@ public class SnapParts : MonoBehaviour
             }
 
             MoveIKTarget ikTarget = FindObjectOfType<MoveIKTarget>();
-            float currentCycleTime = ikTarget != null ? ikTarget.GetCurrentCycleTime() : -1f;
-            string buttonPressed = ikTarget != null ? ikTarget.ConsumeLastButtonPressed() : "None";
-
-            ParticipantManager manager = FindObjectOfType<ParticipantManager>();
-            if (manager != null)
-            {
-                manager.ReportSnap(isFlipped, currentCycleTime, buttonPressed);
-            }
 
 
             if (ikTarget != null)
