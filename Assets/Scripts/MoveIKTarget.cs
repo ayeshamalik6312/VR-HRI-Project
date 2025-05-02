@@ -25,6 +25,7 @@ public class MoveIKTarget : MonoBehaviour
     private ParticipantManager participantManager;
     private List<Vector3> points = new List<Vector3>();
     private List<Quaternion> rots = new List<Quaternion>();
+    private RuntimeMaterialChange materialChanger;
     private GameObject pickPoint;
     private GameObject female;
     private Vector3 tempPos;
@@ -66,6 +67,8 @@ public class MoveIKTarget : MonoBehaviour
 
         female = sockets[socketsCurrSize - 1];
         participantManager = FindObjectOfType<ParticipantManager>();
+        materialChanger = FindObjectOfType<RuntimeMaterialChange>();
+
 
     }
 
@@ -386,6 +389,12 @@ public class MoveIKTarget : MonoBehaviour
     }
     public void ForceRestartCycle()
     {
+
+        foreach (Transform child in pickPoint.transform)
+        {
+            if (child != null)
+                Destroy(child.gameObject);
+        }
         // Stop movement and logic
         move = false;
         state = State.Move;
@@ -416,6 +425,8 @@ public class MoveIKTarget : MonoBehaviour
         {
             female = sockets[socketsCurrSize - 1];
         }
+
+
 
         // Move robot to start
         transform.position = start.position;
