@@ -40,6 +40,8 @@ public class MoveIKTarget : MonoBehaviour
     int dropOption = 0;
     private string lastButtonPressed = "None";
     private bool acceptingDropButtonPress = false;
+    public bool tutorialMode = false;
+    public bool tutorialCycleCompleted = false;
 
 
     readonly float durationMultiplier = 4f;
@@ -115,6 +117,10 @@ public class MoveIKTarget : MonoBehaviour
 
     void GrabState()
     {
+
+        if (female == null || female.Equals(null))
+            return;
+
         bool stepsDone;
         if (switchDir)
         {
@@ -223,8 +229,8 @@ public class MoveIKTarget : MonoBehaviour
         {
             stepsDone = TinyStepLerp(points[posIdx - 1], rots[posIdx - 1], dropTarget.position, dropTarget.rotation);
 
-           // LogRigidbodyState(female, "Before Drop - Female");
-           // LogRigidbodyState(female.transform.parent?.gameObject, "Before Drop - Female Parent");
+            // LogRigidbodyState(female, "Before Drop - Female");
+            // LogRigidbodyState(female.transform.parent?.gameObject, "Before Drop - Female Parent");
 
             if (stepsDone)
             {
@@ -243,7 +249,7 @@ public class MoveIKTarget : MonoBehaviour
                     if (keyRB != null)
                     {
                         Destroy(keyRB);
-                       // Debug.Log("[Drop] Removed Rigidbody from key.");
+                        // Debug.Log("[Drop] Removed Rigidbody from key.");
                     }
 
                     // Optionally disable key collider to avoid internal collisions
@@ -251,7 +257,7 @@ public class MoveIKTarget : MonoBehaviour
                     if (keyCol != null)
                     {
                         keyCol.enabled = false;
-                       // Debug.Log("[Drop] Disabled collider on key.");
+                        // Debug.Log("[Drop] Disabled collider on key.");
                     }
 
                     // Detach whole structure from robot
@@ -275,7 +281,7 @@ public class MoveIKTarget : MonoBehaviour
 
 
 
-                 //   LogRigidbodyState(femaleParent.gameObject, "After Rigidbody Apply");
+                    //   LogRigidbodyState(femaleParent.gameObject, "After Rigidbody Apply");
 
                     //StartCoroutine(RemoveRigidbodiesAfterDelay(femaleParent.gameObject, 3f));
                 }
@@ -288,7 +294,7 @@ public class MoveIKTarget : MonoBehaviour
 
                 female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
 
-                
+
 
                 // Report data
                 string button = ConsumeLastButtonPressed();
@@ -300,7 +306,7 @@ public class MoveIKTarget : MonoBehaviour
 
                 if (femaleToDestroy != null)
                 {
-                   // Debug.Log($"[Drop] Destroying female object: {femaleToDestroy.name}");
+                    // Debug.Log($"[Drop] Destroying female object: {femaleToDestroy.name}");
                     Destroy(femaleToDestroy);
                 }
             }
@@ -308,16 +314,26 @@ public class MoveIKTarget : MonoBehaviour
         else
         {
             stepsDone = TinyStepLerp(tempPos, tempRot, points[posIdx - 1], rots[posIdx - 1]);
-
             if (stepsDone)
             {
                 switchDir = true;
+
+                // 👇 INSERT THIS BLOCK
+                if (tutorialMode)
+                {
+                    move = false;
+                    tutorialMode = false;
+                    tutorialCycleCompleted = true;
+                    state = State.Move; // Optional: or some other "idle" handling if needed
+                    return;
+                }
+
+                // 👇 NORMAL BEHAVIOR
                 move = true;
-                dropOption = 0;
-                acceptingDropButtonPress = false;
                 state = State.Move;
             }
         }
+
     }
 
     IEnumerator RemoveRigidbodiesAfterDelay(GameObject parent, float delay)
@@ -329,7 +345,7 @@ public class MoveIKTarget : MonoBehaviour
         Rigidbody parentRb = parent.GetComponent<Rigidbody>();
         if (parentRb != null)
         {
-      //     Debug.Log($"[Cleanup] Destroying parent RB: isKinematic={parentRb.isKinematic}, useGravity={parentRb.useGravity}");
+            //     Debug.Log($"[Cleanup] Destroying parent RB: isKinematic={parentRb.isKinematic}, useGravity={parentRb.useGravity}");
             Destroy(parentRb);
         }
 
@@ -338,7 +354,7 @@ public class MoveIKTarget : MonoBehaviour
         {
             if (childRb != null)
             {
-           //     Debug.Log($"[Cleanup] Destroying child RB on: {childRb.gameObject.name}, isKinematic={childRb.isKinematic}, useGravity={childRb.useGravity}");
+                //     Debug.Log($"[Cleanup] Destroying child RB on: {childRb.gameObject.name}, isKinematic={childRb.isKinematic}, useGravity={childRb.useGravity}");
                 Destroy(childRb);
             }
         }
@@ -368,25 +384,49 @@ public class MoveIKTarget : MonoBehaviour
             }
         }
     }
-
-    private void LogRigidbodyState(GameObject obj, string context)
+    public void ForceRestartCycle()
     {
-        if (obj == null)
+        // Stop movement and logic
+        move = false;
+        state = State.Move;
+        isCycleTiming = false;
+        cycleTimer = 0f;
+        time = 0f;
+        posIdx = 1;
+        atPrevWaitPoint = false;
+        switchDir = true;
+        tick = 0;
+        dropOption = 0;
+        acceptingDropButtonPress = false;
+        tutorialMode = false;
+        tutorialCycleCompleted = false;
+
+        // Immediately stop using the current female object
+        GameObject oldFemale = female;
+        female = null; // prevent any access in Update()
+
+        if (oldFemale != null)
+            Destroy(oldFemale); // destroy safely
+
+        // Rebuild socket list
+        sockets = GameObject.FindGameObjectsWithTag("female").ToList();
+        socketsCurrSize = sockets.Count;
+
+        if (socketsCurrSize > 0)
         {
-          //  Debug.LogWarning($"[Rigidbody Log] {context}: Object is null.");
-            return;
+            female = sockets[socketsCurrSize - 1];
         }
 
-        Rigidbody rb = obj.GetComponent<Rigidbody>();
-      //  Debug.Log($"[Rigidbody Log] {context} | Object: {obj.name}, HasRB: {rb != null}");
+        // Move robot to start
+        transform.position = start.position;
+        transform.rotation = start.rotation;
 
-        if (rb != null)
-        {
-      //      Debug.Log($"[Rigidbody Log] {context} | isKinematic: {rb.isKinematic}, useGravity: {rb.useGravity}, velocity: {rb.velocity}, angularVelocity: {rb.angularVelocity}");
-        }
-
-   //     Debug.Log($"[Rigidbody Log] {context} | Parent: {(obj.transform.parent ? obj.transform.parent.name : "null")}");
+        // Resume movement
+        move = true;
     }
+
+
+
 
     public string ConsumeLastButtonPressed()
     {

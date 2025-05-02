@@ -152,6 +152,9 @@ public class ForemanTutorialController : MonoBehaviour
         MoveIKTarget moveIKTarget = FindObjectOfType<MoveIKTarget>();
         if (moveIKTarget != null)
         {
+            moveIKTarget.tutorialMode = true;
+            moveIKTarget.tutorialCycleCompleted = false;
+
             moveIKTarget.move = true;
             overlayObject.tag = "Untagged";
 

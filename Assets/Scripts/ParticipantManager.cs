@@ -293,13 +293,13 @@ public class ParticipantManager : MonoBehaviour
         // Find objects to track
         List<Transform> trackedObjects = new List<Transform>();
 
-       // GameObject head = GameObject.FindWithTag("MainCamera"); // or whatever your headset is tagged
-       // GameObject leftHand = GameObject.FindWithTag("LeftController"); // make sure you have proper tags
-       // GameObject rightHand = GameObject.FindWithTag("RightController");
+        // GameObject head = GameObject.FindWithTag("MainCamera"); // or whatever your headset is tagged
+        // GameObject leftHand = GameObject.FindWithTag("LeftController"); // make sure you have proper tags
+        // GameObject rightHand = GameObject.FindWithTag("RightController");
 
-     //   if (head != null) trackedObjects.Add(head.transform);
-      //  if (leftHand != null) trackedObjects.Add(leftHand.transform);
-     //   if (rightHand != null) trackedObjects.Add(rightHand.transform);
+        //   if (head != null) trackedObjects.Add(head.transform);
+        //  if (leftHand != null) trackedObjects.Add(leftHand.transform);
+        //   if (rightHand != null) trackedObjects.Add(rightHand.transform);
 
         // Create motion logger
         motionLogger = gameObject.AddComponent<MotionTrackerLogger>();
@@ -313,7 +313,7 @@ public class ParticipantManager : MonoBehaviour
         };
 
         string motionFilePath = Path.Combine(participantFolderPath, $"{inputField.text.Trim()}-{motionSuffix}.csv");
-      //  motionLogger.Initialize(trackedObjects, motionFilePath);
+        //  motionLogger.Initialize(trackedObjects, motionFilePath);
 
     }
 
@@ -348,6 +348,14 @@ public class ParticipantManager : MonoBehaviour
     }
 
 
+    public void RestartRobotCycle()
+    {
+        MoveIKTarget ikTarget = FindObjectOfType<MoveIKTarget>();
+        if (ikTarget != null)
+        {
+            ikTarget.ForceRestartCycle();
+        }
+    }
 
 
     private void ShowWarning(string message)
