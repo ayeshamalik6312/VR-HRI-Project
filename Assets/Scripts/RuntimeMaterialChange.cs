@@ -38,18 +38,7 @@ public class RuntimeMaterialChange : MonoBehaviour
                 ApplyMaterial(obj, targetMaterial);
             }
         }
-        else if (moveIKTargetScript.state != MoveIKTarget.State.Connect && previousState == MoveIKTarget.State.Connect)
-        {
-            Debug.Log("MaterialChange: Exited CONNECT phase - Hiding overlays");
-
-            foreach (GameObject obj in arTargets.Concat(extraTargets))
-            {
-                if (obj.TryGetComponent(out MeshRenderer renderer))
-                    renderer.enabled = false;
-
-                RevertMaterial(obj);
-            }
-        }
+        
 
         previousState = moveIKTargetScript.state;
     }
@@ -78,6 +67,24 @@ public class RuntimeMaterialChange : MonoBehaviour
         }
     }
 
+    public void DeactivatePromptOverlay()
+    {
+        Debug.Log("MaterialChange: Deactivating PROMPT Overlay");
+
+        foreach (GameObject obj in arTargets.Concat(extraTargets))
+        {
+            if (obj != null)
+            {
+                if (obj.TryGetComponent(out MeshRenderer renderer))
+                    renderer.enabled = false;
+
+                RevertMaterial(obj);
+            }
+        }
+
+        arTargets.Clear();
+        extraTargets.Clear();
+    }
 
 
     public void ActivateContinuousOverlay(GameObject root)

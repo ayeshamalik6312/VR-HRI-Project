@@ -208,6 +208,17 @@ public class MoveIKTarget : MonoBehaviour
     {
         bool stepsDone = false;
 
+        // Turn off overlays only in AugOnPrompt condition
+        if (participantManager != null &&
+            GameObject.FindWithTag("AR") != null) // means current condition is AugOnPrompt
+        {
+            var matChanger = participantManager.materialChanger;
+            if (matChanger != null)
+            {
+                matChanger.DeactivatePromptOverlay();
+            }
+        }
+
         if (switchDir)
         {
             stepsDone = TinyStepLerp(points[posIdx - 1], rots[posIdx - 1], dropTarget.position, dropTarget.rotation);
@@ -276,6 +287,8 @@ public class MoveIKTarget : MonoBehaviour
                 switchDir = false;
 
                 female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
+
+                
 
                 // Report data
                 string button = ConsumeLastButtonPressed();
