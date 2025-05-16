@@ -10,14 +10,14 @@ public class PartsPerformanceLogger
         filePath = path;
     }
 
-    public void LogSnap(int structureCount, bool isFlipped, float cycleTime, int timeRemainingInSeconds, string buttonPressed)
+    public void LogSnap(int structureCount, bool isFlipped, float cycleTime, int timeRemainingInSeconds, string buttonPressed, string chipStatus, bool decisionCorrect)
     {
         string orientation = isFlipped ? "Correct" : "Incorrect";
         int minutes = timeRemainingInSeconds / 60;
         int seconds = timeRemainingInSeconds % 60;
         string formattedTime = $"{minutes:D2}:{seconds:D2}";
 
-        string line = $"{formattedTime},{structureCount},{orientation},{cycleTime:F2},{buttonPressed}";
+        string line = $"{formattedTime},{structureCount},{orientation},{cycleTime:F2},{buttonPressed},{chipStatus},{decisionCorrect}";
         File.AppendAllText(filePath, line + "\n");
     }
 

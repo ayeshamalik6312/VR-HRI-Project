@@ -298,12 +298,26 @@ public class MoveIKTarget : MonoBehaviour
                 female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
 
 
-
                 // Report data
                 string button = ConsumeLastButtonPressed();
+
+                GameObject socket = female.transform.parent?.gameObject;
+
+                bool isKeyChipped = key != null && key.GetComponent<chipped>() != null;
+                bool isSocketChipped = socket != null && socket.GetComponent<chipped>() != null;
+                bool isChipped = isKeyChipped || isSocketChipped;
+
+                string chipStatusString = "None";
+                if (isKeyChipped && isSocketChipped) chipStatusString = "Both";
+                else if (isKeyChipped) chipStatusString = "Key";
+                else if (isSocketChipped) chipStatusString = "Socket";
+
+                bool participantSaidGood = button == "Good";
+                bool decisionCorrect = !isChipped ? participantSaidGood : !participantSaidGood;
+
                 if (participantManager != null && (button == "Good" || button == "Bad"))
                 {
-                    participantManager.ReportSnap(true, GetCurrentCycleTime(), button);
+                    participantManager.ReportSnap(true, GetCurrentCycleTime(), button, chipStatusString, decisionCorrect);
                 }
 
 
@@ -426,6 +440,12 @@ public class MoveIKTarget : MonoBehaviour
             female = sockets[socketsCurrSize - 1];
         }
 
+        if (participantManager != null &&
+        participantManager.CurrentCondition == "AugOnPrompt" &&
+        materialChanger != null)
+            {
+                materialChanger.DeactivatePromptOverlay();
+            }
 
 
         // Move robot to start
@@ -434,6 +454,12 @@ public class MoveIKTarget : MonoBehaviour
 
         // Resume movement
         move = true;
+        if (participantManager != null &&
+        participantManager.CurrentCondition == "AugOnPrompt" &&
+        materialChanger != null)
+        {
+            materialChanger.ActivatePromptOverlay(participantManager.overlayObject);
+        }
     }
 
 

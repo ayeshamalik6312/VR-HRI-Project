@@ -25,11 +25,16 @@ public class ParticipantManager : MonoBehaviour
     private Coroutine timerCoroutine;
     private int timeRemainingInSeconds;
     private MotionTrackerLogger motionLogger;
+    public GameObject prefabToRegenerate; // Assign in Inspector
+    public Transform spawnPoint; // Optional: where to place the new prefab
+
 
     private bool hasActiveParticipant = false;
     private string[] conditionOrder = new string[3];
     private int structureCount = 0;
     private PartsPerformanceLogger partsLogger;
+    public string CurrentCondition { get; private set; } = "";
+
 
     void Start()
     {
@@ -241,6 +246,7 @@ public class ParticipantManager : MonoBehaviour
     private void RunCondition(string conditionName)
 
     {
+        CurrentCondition = conditionName;
 
 
         if (overlayObject == null || materialChanger == null)
@@ -283,7 +289,7 @@ public class ParticipantManager : MonoBehaviour
 
         currentConditionFilePath = Path.Combine(participantFolderPath, $"{inputField.text.Trim()}-{conditionSuffix}-partsperformance.csv");
         if (!File.Exists(currentConditionFilePath))
-            File.WriteAllText(currentConditionFilePath, "Timestamp,StructureCount,SnapOrientation,CycleTimeSeconds, ButtonPressed\n");
+            File.WriteAllText(currentConditionFilePath, "Timestamp,StructureCount,SnapOrientation,CycleTimeSeconds,ButtonPressed,ChipStatus,DecisionCorrect\n");
 
         partsLogger = new PartsPerformanceLogger(currentConditionFilePath);
 
@@ -338,14 +344,16 @@ public class ParticipantManager : MonoBehaviour
     }
 
 
-    public void ReportSnap(bool isFlipped, float cycleTime, string buttonPressed)
+    public void ReportSnap(bool isFlipped, float cycleTime, string buttonPressed, string chipStatus, bool decisionCorrect)
     {
         structureCount++;
         if (partsLogger != null)
         {
-            partsLogger.LogSnap(structureCount, isFlipped, cycleTime, timeRemainingInSeconds, buttonPressed);
+            partsLogger.LogSnap(structureCount, isFlipped, cycleTime, timeRemainingInSeconds, buttonPressed, chipStatus, decisionCorrect);
         }
     }
+
+
 
 
     public void RestartRobotCycle()
@@ -356,6 +364,7 @@ public class ParticipantManager : MonoBehaviour
             ikTarget.ForceRestartCycle();
         }
     }
+
 
 
     private void ShowWarning(string message)
