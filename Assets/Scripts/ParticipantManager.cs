@@ -27,7 +27,7 @@ public class ParticipantManager : MonoBehaviour
     private MotionTrackerLogger motionLogger;
     public GameObject prefabToRegenerate; // Assign in Inspector
     public Transform spawnPoint; // Optional: where to place the new prefab
-
+    public AudioSource buzzer;
 
     private bool hasActiveParticipant = false;
     private string[] conditionOrder = new string[3];
@@ -248,7 +248,7 @@ public class ParticipantManager : MonoBehaviour
     {
         CurrentCondition = conditionName;
 
-
+        buzzer.Play();
         if (overlayObject == null || materialChanger == null)
         {
             Debug.LogError("Overlay or MaterialChanger missing.");
@@ -339,7 +339,7 @@ public class ParticipantManager : MonoBehaviour
 
         if (timerText) timerText.text = "00:00";
         if (currentPhaseText) currentPhaseText.text = "Idle";
-
+        buzzer.Play();
 
     }
 
