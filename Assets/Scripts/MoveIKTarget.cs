@@ -44,10 +44,15 @@ public class MoveIKTarget : MonoBehaviour
     public bool tutorialMode = false;
     public bool tutorialCycleCompleted = false;
 
+    private float connectStartTime = -1f;
+    private float snapCompleteTime = -1f;
+    private float buttonPressTime = -1f;
 
     readonly float durationMultiplier = 4f;
     readonly int tickDuration = 150;
     readonly float rangeDelta = 0.0001f;
+
+
 
     void Start()
     {
@@ -153,6 +158,11 @@ public class MoveIKTarget : MonoBehaviour
     {
         SnapParts snapParts = female.transform.parent.GetComponentInChildren<SnapParts>();
 
+        if (snapParts.snapped == true && snapCompleteTime < 0f)
+        {
+            snapCompleteTime = Time.time;
+        }
+
         if (snapParts.snapped == true)
         {
             if (tick < tickDuration)
@@ -174,6 +184,7 @@ public class MoveIKTarget : MonoBehaviour
         {
             dropOption = 1;
             lastButtonPressed = "Good";
+            buttonPressTime = Time.time;
         }
     }
 
@@ -183,6 +194,8 @@ public class MoveIKTarget : MonoBehaviour
         {
             dropOption = 2;
             lastButtonPressed = "Bad";
+            buttonPressTime = Time.time;
+
         }
     }
 
@@ -318,29 +331,49 @@ public class MoveIKTarget : MonoBehaviour
                 bool participantSaidGood = button == "Good";
                 bool participantSaidBad = button == "Bad";
 
-                // ✅ Final decision logic
                 bool decisionCorrect = false;
+                Debug.Log($"[DEBUG] SnapCorrect: {isSnapCorrect}, ChipStatus: {chipStatusString}, Button: {button}, HasChip: {hasChip}");
+                Debug.Log($"[DEBUG] Expected: {(isSnapCorrect && !hasChip ? "Good" : "Bad")}, Participant Said: {button}");
+
+                // Participant is correct if:
+                // GOOD pressed and it's a perfect part
                 if (isSnapCorrect && !hasChip && participantSaidGood)
                 {
                     decisionCorrect = true;
                 }
+                // BAD pressed and either snap is bad or chipped
                 else if ((!isSnapCorrect || hasChip) && participantSaidBad)
                 {
                     decisionCorrect = true;
                 }
+                // All other cases → incorrect
+
+
+                float timeToConnect = snapCompleteTime - connectStartTime;
+                float timeFromSnapToPress = buttonPressTime - snapCompleteTime;
 
                 // ✅ Report result
                 if (participantManager != null && (button == "Good" || button == "Bad"))
                 {
-                    participantManager.ReportSnap(!isSnapCorrect, button, chipStatusString, decisionCorrect);
+                    participantManager.ReportSnap(
+                        !isSnapCorrect,
+                        button,
+                        chipStatusString,
+                        decisionCorrect,
+                        timeToConnect,
+                        timeFromSnapToPress
+                    );
                 }
+                connectStartTime = -1f;
+                snapCompleteTime = -1f;
+                buttonPressTime = -1f;
 
                 if (femaleToDestroy != null)
                 {
                     Destroy(femaleToDestroy);
                 }
 
-                // ✅ Now assign the next female
+                // ✅ No assign the next female
                 female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
             }
         }
@@ -482,6 +515,11 @@ public class MoveIKTarget : MonoBehaviour
         {
             materialChanger.ActivatePromptOverlay(participantManager.overlayObject);
         }
+
+        connectStartTime = -1f;
+        snapCompleteTime = -1f;
+        buttonPressTime = -1f;
+
     }
 
 
@@ -508,11 +546,19 @@ public class MoveIKTarget : MonoBehaviour
         if (atPrevWaitPoint == false && currPointTag != "Untagged")
         {
             if (currPointTag == "Grab")
+            {
                 state = State.Grab;
+            }
             else if (currPointTag == "Connect")
+            {
+                connectStartTime = Time.time;
                 state = State.Connect;
+            }
             else if (currPointTag == "Drop")
+            {
                 state = State.Drop;
+            }
+
 
             atPrevWaitPoint = true;
             return false;

@@ -294,7 +294,7 @@ public class ParticipantManager : MonoBehaviour
 
         currentConditionFilePath = Path.Combine(participantFolderPath, $"{inputField.text.Trim()}-{conditionSuffix}-partsperformance.csv");
         if (!File.Exists(currentConditionFilePath))
-            File.WriteAllText(currentConditionFilePath, "Timestamp,StructureCount,SnapOrientation,ButtonPressed,ChipStatus,DecisionCorrect\n");
+            File.WriteAllText(currentConditionFilePath, "Timestamp,StructureCount,SnapOrientation,ButtonPressed,ChipStatus,DecisionCorrect,TimeToConnect,TimeFromSnapToPressButton\n");
 
         partsLogger = new PartsPerformanceLogger(currentConditionFilePath);
         // Setup tracking loggers
@@ -378,12 +378,21 @@ public class ParticipantManager : MonoBehaviour
 
 
 
-    public void ReportSnap(bool isFlipped, string buttonPressed, string chipStatus, bool decisionCorrect)
+    public void ReportSnap(bool isFlipped, string buttonPressed, string chipStatus, bool decisionCorrect, float timeToConnect, float timeFromSnapToPress)
     {
         structureCount++;
         if (partsLogger != null)
         {
-            partsLogger.LogSnap(structureCount, isFlipped, timeRemainingInSeconds, buttonPressed, chipStatus, decisionCorrect);
+            partsLogger.LogSnap(
+                structureCount,
+                isFlipped,
+                timeRemainingInSeconds,
+                buttonPressed,
+                chipStatus,
+                decisionCorrect,
+                timeToConnect,
+                timeFromSnapToPress
+            );
         }
     }
 
