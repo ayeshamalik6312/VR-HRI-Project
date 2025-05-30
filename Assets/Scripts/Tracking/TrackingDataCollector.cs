@@ -9,10 +9,16 @@ public class TrackingDataCollector : MonoBehaviour
     private OVRCameraRig ovrCameraRig;
     private StreamWriter writer;
     private float maxRaycastDistance = 500f;
-    private LayerMask raycastLayerMask = Physics.DefaultRaycastLayers;
+    private ParticipantManager participantManager;
 
+    private LayerMask raycastLayerMask = Physics.DefaultRaycastLayers;
     private bool[] leftControllerButtonStates = new bool[8];
     private bool[] rightControllerButtonStates = new bool[8];
+
+    private void Awake()
+    {
+        participantManager = FindObjectOfType<ParticipantManager>();
+    }
 
     public void StartLogging(string filePath)
     {
@@ -23,7 +29,6 @@ public class TrackingDataCollector : MonoBehaviour
     private IEnumerator StartWithPath(string filePath)
     {
         yield return new WaitUntil(() => OVRPlugin.initialized);
-
         StartCoroutine(InitializeDataCollectionWithCustomPath(filePath));
     }
 
@@ -39,11 +44,18 @@ public class TrackingDataCollector : MonoBehaviour
         leftEyeGaze = GetComponentInChildren<OVREyeGaze>(true);
         rightEyeGaze = GetComponentInChildren<OVREyeGaze>(true);
 
-        writer = new StreamWriter(filePath, true);
+        try
+        {
+            writer = new StreamWriter(filePath, true);
+        }
+        catch (IOException ex)
+        {
+            Debug.LogError("File open error: " + ex.Message);
+            yield break;
+        }
 
-        // Header
         writer.WriteLine(
-            "AbsoluteTime,RelativeTime,DeltaTime,"+
+            "CountdownTime,AbsoluteTime,RelativeTime,TimeStep," +
             "LeftEyePosX,LeftEyePosY,LeftEyePosZ," +
             "RightEyePosX,RightEyePosY,RightEyePosZ," +
             "LeftEyeHitObject,RightEyeHitObject," +
@@ -57,7 +69,9 @@ public class TrackingDataCollector : MonoBehaviour
             "RHandRotX,RHandRotY,RHandRotZ,RHandRotW," +
             "RHandEulerX,RHandEulerY,RHandEulerZ," +
             "LeftJoyX,LeftJoyY,RightJoyX,RightJoyY," +
-            "LButtons,RButtons"
+            "L_One,L_Two,L_IndexTrigger,L_HandTrigger,L_Start,L_Thumbstick,L_ThumbUp,L_ThumbClick," +
+            "R_One,R_Two,R_IndexTrigger,R_HandTrigger,R_Start,R_Thumbstick,R_ThumbUp,R_ThumbClick"
+
         );
 
         StartCoroutine(CollectComprehensiveVRData());
@@ -71,8 +85,18 @@ public class TrackingDataCollector : MonoBehaviour
         {
             float currentTime = Time.time;
             float deltaTime = currentTime - previousTime;
-            string absoluteTime = System.DateTime.Now.ToString("HH:mm:ss.fff");
             previousTime = currentTime;
+
+            string absoluteTime = System.DateTime.Now.ToString("HH:mm:ss.fff");
+
+            string countdownFormatted = "NA";
+            if (participantManager != null)
+            {
+                float remaining = participantManager.GetTimeRemaining();
+                int minutes = Mathf.FloorToInt(remaining / 60f);
+                float seconds = remaining % 60f;
+                countdownFormatted = $"{minutes:D2}:{seconds:00.0000}";
+            }
 
             Transform head = ovrCameraRig.centerEyeAnchor;
             Transform leftHand = ovrCameraRig.leftHandAnchor;
@@ -101,7 +125,8 @@ public class TrackingDataCollector : MonoBehaviour
                 rightEyeObj = GetLookedAtObject(rightEyeGaze);
             }
 
-            string line = $"{absoluteTime},{currentTime},{deltaTime}," +
+            string line = $"{countdownFormatted}," +
+                          $"{absoluteTime},{currentTime:0.0000},{deltaTime:0.000000}," +
                           $"{leftEyePos.x},{leftEyePos.y},{leftEyePos.z}," +
                           $"{rightEyePos.x},{rightEyePos.y},{rightEyePos.z}," +
                           $"{leftEyeObj},{rightEyeObj}," +
@@ -119,8 +144,7 @@ public class TrackingDataCollector : MonoBehaviour
                           $"{string.Join(",", rightControllerButtonStates)}";
 
             writer.WriteLine(line);
-
-            yield return new WaitForSeconds(0.01f); // Log at 100Hz
+            yield return new WaitForSeconds(0.01f); // ~100Hz
         }
     }
 
@@ -133,7 +157,7 @@ public class TrackingDataCollector : MonoBehaviour
         states[4] = OVRInput.Get(OVRInput.Button.Start, controller);
         states[5] = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, controller);
         states[6] = OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp, controller);
-        states[7] = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, controller); // Press again as proxy
+        states[7] = OVRInput.Get(OVRInput.Button.PrimaryThumbstickDown, controller); // or choose a distinct button
     }
 
     private string GetLookedAtObject(OVREyeGaze eye)

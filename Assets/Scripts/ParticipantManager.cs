@@ -23,7 +23,8 @@ public class ParticipantManager : MonoBehaviour
     private string participantFolderPath;
     private string currentConditionFilePath;
     private Coroutine timerCoroutine;
-    private int timeRemainingInSeconds;
+    private float timeRemainingInSeconds;
+    public float GetTimeRemaining() => timeRemainingInSeconds;
     public GameObject prefabToRegenerate; // Assign in Inspector
     public Transform spawnPoint; // Optional: where to place the new prefab
     public AudioSource buzzer;
@@ -357,22 +358,24 @@ public class ParticipantManager : MonoBehaviour
 
         while (timeRemainingInSeconds > 0)
         {
-            int minutes = timeRemainingInSeconds / 60;
-            int secs = timeRemainingInSeconds % 60;
+            int minutes = (int)(timeRemainingInSeconds / 60);
+            float secs = timeRemainingInSeconds % 60f;
             if (timerText)
-                timerText.text = $"{minutes:D2}:{secs:D2}";
-            yield return new WaitForSeconds(1);
-            timeRemainingInSeconds--;
+                timerText.text = $"{minutes:D2}:{secs:00.0000}";
+
+            yield return null; // run every frame for higher resolution
+            timeRemainingInSeconds -= Time.deltaTime;
         }
 
-        if (timerText) timerText.text = "00:00";
+        timeRemainingInSeconds = 0f;
+        if (timerText) timerText.text = "00:00.0000";
         if (currentPhaseText) currentPhaseText.text = "Idle";
         buzzer.Play();
 
         trackingDataCollector?.StopLogging();
         eyeTrackingLogger?.StopLogging();
-
     }
+
 
 
     public void ReportSnap(bool isFlipped, string buttonPressed, string chipStatus, bool decisionCorrect)
