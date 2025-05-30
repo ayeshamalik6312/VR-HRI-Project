@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.IO;
 
-
 public class TrackingDataCollector : MonoBehaviour
 {
     private OVREyeGaze leftEyeGaze;
@@ -12,19 +11,23 @@ public class TrackingDataCollector : MonoBehaviour
     private float maxRaycastDistance = 500f;
     private LayerMask raycastLayerMask = Physics.DefaultRaycastLayers;
 
+    private bool[] leftControllerButtonStates = new bool[8];
+    private bool[] rightControllerButtonStates = new bool[8];
 
-    // Controller button states
-    private bool[] leftControllerButtonStates;
-    private bool[] rightControllerButtonStates;
-    
-    void Start()
+    public void StartLogging(string filePath)
     {
-      //  StartCoroutine(InitializeDataCollection());
+        StopAllCoroutines();
+        StartCoroutine(StartWithPath(filePath));
     }
 
+    private IEnumerator StartWithPath(string filePath)
+    {
+        yield return new WaitUntil(() => OVRPlugin.initialized);
 
+        StartCoroutine(InitializeDataCollectionWithCustomPath(filePath));
+    }
 
-    IEnumerator InitializeDataCollectionWithCustomPath(string filePath)
+    private IEnumerator InitializeDataCollectionWithCustomPath(string filePath)
     {
         ovrCameraRig = GetComponent<OVRCameraRig>();
         if (ovrCameraRig == null)
@@ -35,69 +38,110 @@ public class TrackingDataCollector : MonoBehaviour
 
         leftEyeGaze = GetComponentInChildren<OVREyeGaze>(true);
         rightEyeGaze = GetComponentInChildren<OVREyeGaze>(true);
-        if (leftEyeGaze == null || rightEyeGaze == null)
-        {
-            Debug.LogError("Eye gaze components not found!");
-            yield break;
-        }
 
         writer = new StreamWriter(filePath, true);
 
-        // (Write headers here like you already do)
-        writer.WriteLine("Timestamp, ..."); // truncated for brevity
+        // Header
+        writer.WriteLine(
+            "AbsoluteTime,RelativeTime,DeltaTime,"+
+            "LeftEyePosX,LeftEyePosY,LeftEyePosZ," +
+            "RightEyePosX,RightEyePosY,RightEyePosZ," +
+            "LeftEyeHitObject,RightEyeHitObject," +
+            "HeadPosX,HeadPosY,HeadPosZ," +
+            "HeadRotX,HeadRotY,HeadRotZ,HeadRotW," +
+            "HeadEulerX,HeadEulerY,HeadEulerZ," +
+            "LHandPosX,LHandPosY,LHandPosZ," +
+            "LHandRotX,LHandRotY,LHandRotZ,LHandRotW," +
+            "LHandEulerX,LHandEulerY,LHandEulerZ," +
+            "RHandPosX,RHandPosY,RHandPosZ," +
+            "RHandRotX,RHandRotY,RHandRotZ,RHandRotW," +
+            "RHandEulerX,RHandEulerY,RHandEulerZ," +
+            "LeftJoyX,LeftJoyY,RightJoyX,RightJoyY," +
+            "LButtons,RButtons"
+        );
 
         StartCoroutine(CollectComprehensiveVRData());
     }
 
-    IEnumerator CollectComprehensiveVRData()
+    private IEnumerator CollectComprehensiveVRData()
     {
+        float previousTime = Time.time;
+
         while (true)
         {
-            if (leftEyeGaze.isActiveAndEnabled && rightEyeGaze.isActiveAndEnabled)
+            float currentTime = Time.time;
+            float deltaTime = currentTime - previousTime;
+            string absoluteTime = System.DateTime.Now.ToString("HH:mm:ss.fff");
+            previousTime = currentTime;
+
+            Transform head = ovrCameraRig.centerEyeAnchor;
+            Transform leftHand = ovrCameraRig.leftHandAnchor;
+            Transform rightHand = ovrCameraRig.rightHandAnchor;
+
+            Vector2 leftJoystick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.LTouch);
+            Vector2 rightJoystick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.RTouch);
+
+            UpdateButtonStates(OVRInput.Controller.LTouch, ref leftControllerButtonStates);
+            UpdateButtonStates(OVRInput.Controller.RTouch, ref rightControllerButtonStates);
+
+            string leftEyeObj = "None";
+            string rightEyeObj = "None";
+            Vector3 leftEyePos = Vector3.zero;
+            Vector3 rightEyePos = Vector3.zero;
+
+            bool gazeEnabled = OVRPlugin.eyeTrackingSupported && OVRPlugin.eyeTrackingEnabled &&
+                               leftEyeGaze != null && rightEyeGaze != null &&
+                               leftEyeGaze.isActiveAndEnabled && rightEyeGaze.isActiveAndEnabled;
+
+            if (gazeEnabled)
             {
-                Vector3 leftEyePosition = leftEyeGaze.transform.position;
-                Vector3 rightEyePosition = rightEyeGaze.transform.position;
-                string leftEyeObject = GetLookedAtObject(leftEyeGaze);
-                string rightEyeObject = GetLookedAtObject(rightEyeGaze);
-
-
-                Transform centerEyeAnchor = ovrCameraRig.centerEyeAnchor;
-                Transform leftHandAnchor = ovrCameraRig.leftHandAnchor;
-                Transform rightHandAnchor = ovrCameraRig.rightHandAnchor;
-
-
-                // Get joystick positions
-                Vector2 leftJoystick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.LTouch);
-                Vector2 rightJoystick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.RTouch);
-
-
-                // Check button states
-                UpdateButtonStates(OVRInput.Controller.LTouch, ref leftControllerButtonStates);
-                UpdateButtonStates(OVRInput.Controller.RTouch, ref rightControllerButtonStates);
-
-
-                string dataLine = $"{Time.time}," +
-                                  $"{leftEyePosition.x},{leftEyePosition.y},{leftEyePosition.z}," +
-                                  $"{rightEyePosition.x},{rightEyePosition.y},{rightEyePosition.z}," +
-                                  $"{leftEyeObject},{rightEyeObject}," +
-                                  $"{centerEyeAnchor.position.x},{centerEyeAnchor.position.y},{centerEyeAnchor.position.z}," +
-                                  $"{centerEyeAnchor.rotation.x},{centerEyeAnchor.rotation.y},{centerEyeAnchor.rotation.z},{centerEyeAnchor.rotation.w}," +
-                                  $"{centerEyeAnchor.eulerAngles.x},{centerEyeAnchor.eulerAngles.y},{centerEyeAnchor.eulerAngles.z}," +
-                                  $"{leftHandAnchor.position.x},{leftHandAnchor.position.y},{leftHandAnchor.position.z}," +
-                                  $"{leftHandAnchor.rotation.x},{leftHandAnchor.rotation.y},{leftHandAnchor.rotation.z},{leftHandAnchor.rotation.w}," +
-                                  $"{leftHandAnchor.eulerAngles.x},{leftHandAnchor.eulerAngles.y},{leftHandAnchor.eulerAngles.z}," +
-                                  $"{rightHandAnchor.position.x},{rightHandAnchor.position.y},{rightHandAnchor.position.z}," +
-                                  $"{rightHandAnchor.rotation.x},{rightHandAnchor.rotation.y},{rightHandAnchor.rotation.z},{rightHandAnchor.rotation.w}," +
-                                  $"{rightHandAnchor.eulerAngles.x},{rightHandAnchor.eulerAngles.y},{rightHandAnchor.eulerAngles.z}," +
-                                  $"{leftJoystick.x},{leftJoystick.y},{rightJoystick.x},{rightJoystick.y}," +
-                                  $"{string.Join(",", leftControllerButtonStates)}," +
-                                  $"{string.Join(",", rightControllerButtonStates)}";
-
-
-                writer.WriteLine(dataLine);
+                leftEyePos = leftEyeGaze.transform.position;
+                rightEyePos = rightEyeGaze.transform.position;
+                leftEyeObj = GetLookedAtObject(leftEyeGaze);
+                rightEyeObj = GetLookedAtObject(rightEyeGaze);
             }
-            yield return new WaitForSeconds(0.01f); // Collect data every 10ms
+
+            string line = $"{absoluteTime},{currentTime},{deltaTime}," +
+                          $"{leftEyePos.x},{leftEyePos.y},{leftEyePos.z}," +
+                          $"{rightEyePos.x},{rightEyePos.y},{rightEyePos.z}," +
+                          $"{leftEyeObj},{rightEyeObj}," +
+                          $"{head.position.x},{head.position.y},{head.position.z}," +
+                          $"{head.rotation.x},{head.rotation.y},{head.rotation.z},{head.rotation.w}," +
+                          $"{head.eulerAngles.x},{head.eulerAngles.y},{head.eulerAngles.z}," +
+                          $"{leftHand.position.x},{leftHand.position.y},{leftHand.position.z}," +
+                          $"{leftHand.rotation.x},{leftHand.rotation.y},{leftHand.rotation.z},{leftHand.rotation.w}," +
+                          $"{leftHand.eulerAngles.x},{leftHand.eulerAngles.y},{leftHand.eulerAngles.z}," +
+                          $"{rightHand.position.x},{rightHand.position.y},{rightHand.position.z}," +
+                          $"{rightHand.rotation.x},{rightHand.rotation.y},{rightHand.rotation.z},{rightHand.rotation.w}," +
+                          $"{rightHand.eulerAngles.x},{rightHand.eulerAngles.y},{rightHand.eulerAngles.z}," +
+                          $"{leftJoystick.x},{leftJoystick.y},{rightJoystick.x},{rightJoystick.y}," +
+                          $"{string.Join(",", leftControllerButtonStates)}," +
+                          $"{string.Join(",", rightControllerButtonStates)}";
+
+            writer.WriteLine(line);
+
+            yield return new WaitForSeconds(0.01f); // Log at 100Hz
         }
+    }
+
+    private void UpdateButtonStates(OVRInput.Controller controller, ref bool[] states)
+    {
+        states[0] = OVRInput.Get(OVRInput.Button.One, controller);
+        states[1] = OVRInput.Get(OVRInput.Button.Two, controller);
+        states[2] = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, controller);
+        states[3] = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, controller);
+        states[4] = OVRInput.Get(OVRInput.Button.Start, controller);
+        states[5] = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, controller);
+        states[6] = OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp, controller);
+        states[7] = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, controller); // Press again as proxy
+    }
+
+    private string GetLookedAtObject(OVREyeGaze eye)
+    {
+        Ray ray = new Ray(eye.transform.position, eye.transform.forward);
+        return Physics.Raycast(ray, out RaycastHit hit, maxRaycastDistance, raycastLayerMask)
+            ? hit.collider.gameObject.name
+            : "None";
     }
 
     public void StopLogging()
@@ -110,48 +154,8 @@ public class TrackingDataCollector : MonoBehaviour
         }
     }
 
-    void UpdateButtonStates(OVRInput.Controller controller, ref bool[] buttonStates)
+    private void OnApplicationQuit()
     {
-        buttonStates[0] = OVRInput.Get(OVRInput.Button.One, controller);
-        buttonStates[1] = OVRInput.Get(OVRInput.Button.Two, controller);
-        buttonStates[2] = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, controller);
-        buttonStates[3] = OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, controller);
-        buttonStates[4] = OVRInput.Get(OVRInput.Button.Start, controller);
-        buttonStates[5] = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, controller);
-        buttonStates[6] = OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp, controller); // Using Up as a proxy for Touchpad
-        buttonStates[7] = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, controller); // Thumbstick press
-    }
-
-
-    string GetLookedAtObject(OVREyeGaze eyeGaze)
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(eyeGaze.transform.position, eyeGaze.transform.forward, out hit, maxRaycastDistance, raycastLayerMask))
-        {
-                        return hit.collider.gameObject.name;
-        }
-                
-        return "None";
-    }
-
-    public void StartLogging(string filePath)
-    {
-        StopAllCoroutines();
-        StartCoroutine(StartWithPath(filePath));
-    }
-
-    private IEnumerator StartWithPath(string filePath)
-    {
-        yield return new WaitUntil(() => OVRPlugin.eyeTrackingEnabled || !OVRPlugin.eyeTrackingSupported);
-
-        StartCoroutine(InitializeDataCollectionWithCustomPath(filePath));
-    }
-
-    void OnApplicationQuit()
-    {
-        if (writer != null)
-        {
-            writer.Close();
-        }
+        StopLogging();
     }
 }

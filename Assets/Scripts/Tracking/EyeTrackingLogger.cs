@@ -20,10 +20,6 @@ public class EyeTrackingLogger : MonoBehaviour
         leftEye = GetComponentInChildren<OVREyeGaze>(true);
         rightEye = GetComponentInChildren<OVREyeGaze>(true);
 
-        string downloadsPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), "Downloads");
-        logFilePath = Path.Combine(downloadsPath, "eye_tracking_log.csv");
-
-        File.WriteAllText(logFilePath, "Timestamp,ObjectLookedAt,GazeDuration\n");
     }
 
     void Update()
@@ -42,6 +38,7 @@ public class EyeTrackingLogger : MonoBehaviour
             currentObject = lookedAt;
             gazeStartTime = now;
         }
+
     }
     public void StartLogging(string filePath)
     {

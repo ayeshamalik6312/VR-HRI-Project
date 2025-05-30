@@ -1,4 +1,0 @@
-Timestamp,StructureCount,SnapOrientation,CycleTimeSeconds,ButtonPressed,ChipStatus,DecisionCorrect
-09:28,1,Correct,22.09,Bad,Socket,True
-09:09,2,Incorrect,3.56,Good,Socket,False
-08:51,3,Correct,4.41,Good,None,True

@@ -34,8 +34,8 @@ public class ParticipantManager : MonoBehaviour
     public string CurrentCondition { get; private set; } = "";
 
     private PartsPerformanceLogger partsLogger;
-    private TrackingDataCollector trackingDataCollector;
-    private EyeTrackingLogger eyeTrackingLogger;
+    public TrackingDataCollector trackingDataCollector;
+    public EyeTrackingLogger eyeTrackingLogger;
 
 
 
@@ -307,15 +307,19 @@ public class ParticipantManager : MonoBehaviour
 
         if (trackingDataCollector != null)
             trackingDataCollector.StartLogging(motionPath);
+            Debug.Log("Starting motion tracking log at: " + motionPath);
+
 
         if (OVRPlugin.eyeTrackingSupported && OVRPlugin.eyeTrackingEnabled)
         {
             eyeTrackingLogger?.StartLogging(gazePath);
+            Debug.Log("Starting eye tracking log at: " + gazePath);
         }
         else
         {
             Debug.LogWarning("Gaze tracking not supported or disabled. Skipping gaze log.");
         }
+
 
 
         if (timerCoroutine != null) StopCoroutine(timerCoroutine);
