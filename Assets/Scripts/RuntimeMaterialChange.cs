@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -21,15 +21,14 @@ public class RuntimeMaterialChange : MonoBehaviour
         if (moveIKTargetScript != null)
             previousState = moveIKTargetScript.state;
     }
-
     private void Update()
     {
         if (moveIKTargetScript == null) return;
 
-        if (moveIKTargetScript.state == MoveIKTarget.State.Connect && previousState != MoveIKTarget.State.Connect)
-        {
-            Debug.Log("MaterialChange: CONNECT phase activated - Showing overlays");
+        var currentState = moveIKTargetScript.state;
 
+        if (currentState == MoveIKTarget.State.Connect && previousState != MoveIKTarget.State.Connect)
+        {
             foreach (GameObject obj in arTargets.Concat(extraTargets))
             {
                 if (obj.TryGetComponent(out MeshRenderer renderer))
@@ -38,15 +37,27 @@ public class RuntimeMaterialChange : MonoBehaviour
                 ApplyMaterial(obj, targetMaterial);
             }
         }
-        
+        else if (currentState == MoveIKTarget.State.Move && previousState != MoveIKTarget.State.Move)
+        {
+            // Fix: Turn off extraTargets in Continuous mode when returning to Move state
+            ParticipantManager participantManager = FindObjectOfType<ParticipantManager>();
+            if (participantManager != null && participantManager.CurrentCondition == "Continuous")
+            {
+                foreach (GameObject obj in extraTargets)
+                {
+                    if (obj.TryGetComponent(out MeshRenderer renderer))
+                        renderer.enabled = false;
+                }
+            }
+        }
 
-        previousState = moveIKTargetScript.state;
+        previousState = currentState;
     }
 
 
     public void ActivatePromptOverlay(GameObject root)
     {
-        Debug.Log("MaterialChange: Activating PROMPT Overlay");
+      //  Debug.Log("MaterialChange: Activating PROMPT Overlay");
         arTargets.Clear();
         extraTargets.Clear(); // reset both lists
 
@@ -69,7 +80,7 @@ public class RuntimeMaterialChange : MonoBehaviour
 
     public void DeactivatePromptOverlay()
     {
-        Debug.Log("MaterialChange: Deactivating PROMPT Overlay");
+      //  Debug.Log("MaterialChange: Deactivating PROMPT Overlay");
 
         foreach (GameObject obj in arTargets.Concat(extraTargets))
         {
@@ -89,7 +100,7 @@ public class RuntimeMaterialChange : MonoBehaviour
 
     public void ActivateContinuousOverlay(GameObject root)
     {
-        Debug.Log("MaterialChange: Activating CONTINUOUS Overlay");
+      //  Debug.Log("MaterialChange: Activating CONTINUOUS Overlay");
         arTargets.Clear();
         extraTargets.Clear();
 
@@ -126,7 +137,7 @@ public class RuntimeMaterialChange : MonoBehaviour
 
     public void DeactivateOverlay()
     {
-        Debug.Log("MaterialChange: Deactivating Overlay");
+       // Debug.Log("MaterialChange: Deactivating Overlay");
         foreach (GameObject obj in arTargets.Concat(extraTargets))
         {
             if (obj != null)

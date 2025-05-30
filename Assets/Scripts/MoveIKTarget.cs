@@ -189,18 +189,38 @@ public class MoveIKTarget : MonoBehaviour
 
     void DropState()
     {
-        // Enable accepting button press
+        // Always log all relevant state info at the start of every frame in DropState
+            //    Debug.Log($"    female: {(female != null ? female.name : "null")}");
+     //   Debug.Log($"    female.parent: {(female?.transform.parent != null ? female.transform.parent.name : "null")}");
+      //  Debug.Log($"    cycleTimer: {cycleTimer:F2}");
+     //   Debug.Log($"    position: {transform.position}");
+      //  Debug.Log($"    rotation: {transform.rotation.eulerAngles}");
+
+        // Make sure we accept input
         acceptingDropButtonPress = true;
 
         if (dropOption == 1)
         {
+           // Debug.Log("[DropState] ✅ dropOption == 1 → calling DropGoodFunc()");
+           // Debug.Log($"    PressedButton: {lastButtonPressed}");
+            acceptingDropButtonPress = false;
             DropGoodFunc();
         }
         else if (dropOption == 2)
         {
+           // Debug.Log("[DropState] ✅ dropOption == 2 → calling DropBadFunc()");
+           // Debug.Log($"    PressedButton: {lastButtonPressed}");
+            acceptingDropButtonPress = false;
             DropBadFunc();
         }
+        else
+        {
+          //  Debug.Log("[DropState] ⏳ No button press detected yet this frame.");
+        }
+
+      //  Debug.Log("[DropState] ---- End of DropState frame ----");
     }
+
 
 
     void DropGoodFunc()
@@ -219,7 +239,7 @@ public class MoveIKTarget : MonoBehaviour
 
         // Turn off overlays only in AugOnPrompt condition
         if (participantManager != null &&
-            GameObject.FindWithTag("AR") != null) // means current condition is AugOnPrompt
+            GameObject.FindWithTag("AR") != null)
         {
             var matChanger = participantManager.materialChanger;
             if (matChanger != null)
@@ -232,9 +252,6 @@ public class MoveIKTarget : MonoBehaviour
         {
             stepsDone = TinyStepLerp(points[posIdx - 1], rots[posIdx - 1], dropTarget.position, dropTarget.rotation);
 
-            // LogRigidbodyState(female, "Before Drop - Female");
-            // LogRigidbodyState(female.transform.parent?.gameObject, "Before Drop - Female Parent");
-
             if (stepsDone)
             {
                 tempPos = female.transform.position;
@@ -245,48 +262,34 @@ public class MoveIKTarget : MonoBehaviour
 
                 if (femaleParent != null)
                 {
-                    key.transform.parent = femaleParent;  // Make sure key stays with socket
+                    key.transform.parent = femaleParent;
 
-                    // Remove Rigidbody from key (child) to prevent double physics simulation
                     Rigidbody keyRB = key.GetComponent<Rigidbody>();
                     if (keyRB != null)
                     {
                         Destroy(keyRB);
-                        // Debug.Log("[Drop] Removed Rigidbody from key.");
                     }
 
-                    // Optionally disable key collider to avoid internal collisions
                     Collider keyCol = key.GetComponent<Collider>();
                     if (keyCol != null)
                     {
                         keyCol.enabled = false;
-                        // Debug.Log("[Drop] Disabled collider on key.");
                     }
 
-                    // Detach whole structure from robot
                     femaleParent.parent = null;
 
-                    // Add Rigidbody to parent (socket) if missing
                     Rigidbody rb = femaleParent.GetComponent<Rigidbody>();
                     if (rb == null)
                     {
                         rb = femaleParent.gameObject.AddComponent<Rigidbody>();
-                        //Debug.Log("[Drop] Rigidbody added to socket.");
                     }
 
-                    // Physics settings
                     rb.isKinematic = false;
                     rb.useGravity = true;
                     rb.velocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
                     rb.drag = 1f;
                     rb.angularDrag = 1f;
-
-
-
-                    //   LogRigidbodyState(femaleParent.gameObject, "After Rigidbody Apply");
-
-                    //StartCoroutine(RemoveRigidbodiesAfterDelay(femaleParent.gameObject, 3f));
                 }
 
                 // Update socket list
@@ -295,37 +298,50 @@ public class MoveIKTarget : MonoBehaviour
                 socketsCurrSize--;
                 switchDir = false;
 
-                female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
-
+                // Do NOT reassign `female` until after decision logic
 
                 // Report data
                 string button = ConsumeLastButtonPressed();
 
-                GameObject socket = female.transform.parent?.gameObject;
-
+                GameObject socket = femaleParent?.gameObject;  // ✅ Use femaleParent
                 bool isKeyChipped = key != null && key.GetComponent<chipped>() != null;
                 bool isSocketChipped = socket != null && socket.GetComponent<chipped>() != null;
-                bool isChipped = isKeyChipped || isSocketChipped;
+                bool hasChip = isKeyChipped || isSocketChipped;
 
                 string chipStatusString = "None";
                 if (isKeyChipped && isSocketChipped) chipStatusString = "Both";
                 else if (isKeyChipped) chipStatusString = "Key";
                 else if (isSocketChipped) chipStatusString = "Socket";
 
+                SnapParts snapParts = femaleParent?.GetComponentInChildren<SnapParts>();
+                bool isSnapCorrect = snapParts != null && !snapParts.isFlipped;
                 bool participantSaidGood = button == "Good";
-                bool decisionCorrect = !isChipped ? participantSaidGood : !participantSaidGood;
+                bool participantSaidBad = button == "Bad";
 
-                if (participantManager != null && (button == "Good" || button == "Bad"))
+                // ✅ Final decision logic
+                bool decisionCorrect = false;
+                if (isSnapCorrect && !hasChip && participantSaidGood)
                 {
-                    participantManager.ReportSnap(true, GetCurrentCycleTime(), button, chipStatusString, decisionCorrect);
+                    decisionCorrect = true;
+                }
+                else if ((!isSnapCorrect || hasChip) && participantSaidBad)
+                {
+                    decisionCorrect = true;
                 }
 
+                // ✅ Report result
+                if (participantManager != null && (button == "Good" || button == "Bad"))
+                {
+                    participantManager.ReportSnap(!isSnapCorrect, button, chipStatusString, decisionCorrect);
+                }
 
                 if (femaleToDestroy != null)
                 {
-                    // Debug.Log($"[Drop] Destroying female object: {femaleToDestroy.name}");
                     Destroy(femaleToDestroy);
                 }
+
+                // ✅ Now assign the next female
+                female = socketsCurrSize > 0 ? sockets[socketsCurrSize - 1] : null;
             }
         }
         else
@@ -335,23 +351,29 @@ public class MoveIKTarget : MonoBehaviour
             {
                 switchDir = true;
 
-                // 👇 INSERT THIS BLOCK
                 if (tutorialMode)
                 {
                     move = false;
                     tutorialMode = false;
                     tutorialCycleCompleted = true;
-                    state = State.Move; // Optional: or some other "idle" handling if needed
+                    state = State.Move;
                     return;
                 }
 
-                // 👇 NORMAL BEHAVIOR
                 move = true;
                 state = State.Move;
+                dropOption = 0;
+
+                if (participantManager != null &&
+                    participantManager.CurrentCondition == "AugOnPrompt" &&
+                    materialChanger != null)
+                {
+                    materialChanger.ActivatePromptOverlay(participantManager.overlayObject);
+                }
             }
         }
-
     }
+
 
     IEnumerator RemoveRigidbodiesAfterDelay(GameObject parent, float delay)
     {
@@ -443,9 +465,9 @@ public class MoveIKTarget : MonoBehaviour
         if (participantManager != null &&
         participantManager.CurrentCondition == "AugOnPrompt" &&
         materialChanger != null)
-            {
-                materialChanger.DeactivatePromptOverlay();
-            }
+        {
+            materialChanger.DeactivatePromptOverlay();
+        }
 
 
         // Move robot to start
@@ -472,10 +494,7 @@ public class MoveIKTarget : MonoBehaviour
         return result;
     }
 
-    public float GetCurrentCycleTime()
-    {
-        return cycleTimer;
-    }
+
 
     public void ResetCycleTimer()
     {

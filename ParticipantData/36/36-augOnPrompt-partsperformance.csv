@@ -1,0 +1,5 @@
+Timestamp,StructureCount,SnapOrientation,ButtonPressed,ChipStatus,DecisionCorrect
+08:56,1,Incorrect,Bad,None,False
+08:08,2,Correct,Good,None,False
+07:40,3,Incorrect,Good,Socket,False
+07:03,4,Correct,Bad,Socket,True

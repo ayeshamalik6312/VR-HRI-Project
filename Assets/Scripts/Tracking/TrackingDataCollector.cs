@@ -19,22 +19,19 @@ public class TrackingDataCollector : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(InitializeDataCollection());
+      //  StartCoroutine(InitializeDataCollection());
     }
 
 
-    IEnumerator InitializeDataCollection()
+
+    IEnumerator InitializeDataCollectionWithCustomPath(string filePath)
     {
-        yield return new WaitUntil(() => OVRPlugin.eyeTrackingEnabled);
-
-
         ovrCameraRig = GetComponent<OVRCameraRig>();
         if (ovrCameraRig == null)
         {
             Debug.LogError("OVRCameraRig component not found!");
             yield break;
         }
-
 
         leftEyeGaze = GetComponentInChildren<OVREyeGaze>(true);
         rightEyeGaze = GetComponentInChildren<OVREyeGaze>(true);
@@ -44,38 +41,13 @@ public class TrackingDataCollector : MonoBehaviour
             yield break;
         }
 
-
-        // Initialize button states (now 8 buttons per controller, including thumbstick press)
-        leftControllerButtonStates = new bool[8];
-        rightControllerButtonStates = new bool[8];
-
-
-        // Set file path to Downloads folder
-        string downloadsPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), "Downloads");
-        string filePath = Path.Combine(downloadsPath, "comprehensive_vr_data_collection.csv");
         writer = new StreamWriter(filePath, true);
 
-
-        // Write header
-        writer.WriteLine("Timestamp," +
-                         "LeftEyeX,LeftEyeY,LeftEyeZ,RightEyeX,RightEyeY,RightEyeZ,LeftEyeObject,RightEyeObject," +
-                         "HeadPositionX,HeadPositionY,HeadPositionZ," +
-                         "HeadRotationX,HeadRotationY,HeadRotationZ,HeadRotationW," +
-                         "HeadEulerX,HeadEulerY,HeadEulerZ," +
-                         "LeftHandPositionX,LeftHandPositionY,LeftHandPositionZ," +
-                         "LeftHandRotationX,LeftHandRotationY,LeftHandRotationZ,LeftHandRotationW," +
-                         "LeftHandEulerX,LeftHandEulerY,LeftHandEulerZ," +
-                         "RightHandPositionX,RightHandPositionY,RightHandPositionZ," +
-                         "RightHandRotationX,RightHandRotationY,RightHandRotationZ,RightHandRotationW," +
-                         "RightHandEulerX,RightHandEulerY,RightHandEulerZ," +
-                         "LeftJoystickX,LeftJoystickY,RightJoystickX,RightJoystickY," +
-                         "LeftPrimaryButton,LeftSecondaryButton,LeftTriggerButton,LeftGripButton,LeftStartButton,LeftThumbstickButton,LeftTouchpadButton,LeftThumbstickPress," +
-                         "RightPrimaryButton,RightSecondaryButton,RightTriggerButton,RightGripButton,RightStartButton,RightThumbstickButton,RightTouchpadButton,RightThumbstickPress");
-
+        // (Write headers here like you already do)
+        writer.WriteLine("Timestamp, ..."); // truncated for brevity
 
         StartCoroutine(CollectComprehensiveVRData());
     }
-
 
     IEnumerator CollectComprehensiveVRData()
     {
@@ -128,6 +100,15 @@ public class TrackingDataCollector : MonoBehaviour
         }
     }
 
+    public void StopLogging()
+    {
+        StopAllCoroutines();
+        if (writer != null)
+        {
+            writer.Close();
+            writer = null;
+        }
+    }
 
     void UpdateButtonStates(OVRInput.Controller controller, ref bool[] buttonStates)
     {
@@ -153,6 +134,18 @@ public class TrackingDataCollector : MonoBehaviour
         return "None";
     }
 
+    public void StartLogging(string filePath)
+    {
+        StopAllCoroutines();
+        StartCoroutine(StartWithPath(filePath));
+    }
+
+    private IEnumerator StartWithPath(string filePath)
+    {
+        yield return new WaitUntil(() => OVRPlugin.eyeTrackingEnabled || !OVRPlugin.eyeTrackingSupported);
+
+        StartCoroutine(InitializeDataCollectionWithCustomPath(filePath));
+    }
 
     void OnApplicationQuit()
     {

@@ -24,7 +24,6 @@ public class ParticipantManager : MonoBehaviour
     private string currentConditionFilePath;
     private Coroutine timerCoroutine;
     private int timeRemainingInSeconds;
-    private MotionTrackerLogger motionLogger;
     public GameObject prefabToRegenerate; // Assign in Inspector
     public Transform spawnPoint; // Optional: where to place the new prefab
     public AudioSource buzzer;
@@ -32,8 +31,13 @@ public class ParticipantManager : MonoBehaviour
     private bool hasActiveParticipant = false;
     private string[] conditionOrder = new string[3];
     private int structureCount = 0;
-    private PartsPerformanceLogger partsLogger;
     public string CurrentCondition { get; private set; } = "";
+
+    private PartsPerformanceLogger partsLogger;
+    private TrackingDataCollector trackingDataCollector;
+    private EyeTrackingLogger eyeTrackingLogger;
+
+
 
 
     void Start()
@@ -289,9 +293,30 @@ public class ParticipantManager : MonoBehaviour
 
         currentConditionFilePath = Path.Combine(participantFolderPath, $"{inputField.text.Trim()}-{conditionSuffix}-partsperformance.csv");
         if (!File.Exists(currentConditionFilePath))
-            File.WriteAllText(currentConditionFilePath, "Timestamp,StructureCount,SnapOrientation,CycleTimeSeconds,ButtonPressed,ChipStatus,DecisionCorrect\n");
+            File.WriteAllText(currentConditionFilePath, "Timestamp,StructureCount,SnapOrientation,ButtonPressed,ChipStatus,DecisionCorrect\n");
 
         partsLogger = new PartsPerformanceLogger(currentConditionFilePath);
+        // Setup tracking loggers
+        if (trackingDataCollector == null)
+            trackingDataCollector = GetComponent<TrackingDataCollector>();
+        if (eyeTrackingLogger == null)
+            eyeTrackingLogger = GetComponent<EyeTrackingLogger>();
+
+        string motionPath = Path.Combine(participantFolderPath, $"{inputField.text.Trim()}-{conditionSuffix}-motiongaze.csv");
+        string gazePath = Path.Combine(participantFolderPath, $"{inputField.text.Trim()}-{conditionSuffix}-eyelog.csv");
+
+        if (trackingDataCollector != null)
+            trackingDataCollector.StartLogging(motionPath);
+
+        if (OVRPlugin.eyeTrackingSupported && OVRPlugin.eyeTrackingEnabled)
+        {
+            eyeTrackingLogger?.StartLogging(gazePath);
+        }
+        else
+        {
+            Debug.LogWarning("Gaze tracking not supported or disabled. Skipping gaze log.");
+        }
+
 
         if (timerCoroutine != null) StopCoroutine(timerCoroutine);
         timerCoroutine = StartCoroutine(StartTimer(600));
@@ -308,7 +333,6 @@ public class ParticipantManager : MonoBehaviour
         //   if (rightHand != null) trackedObjects.Add(rightHand.transform);
 
         // Create motion logger
-        motionLogger = gameObject.AddComponent<MotionTrackerLogger>();
 
         string motionSuffix = conditionName switch
         {
@@ -341,15 +365,18 @@ public class ParticipantManager : MonoBehaviour
         if (currentPhaseText) currentPhaseText.text = "Idle";
         buzzer.Play();
 
+        trackingDataCollector?.StopLogging();
+        eyeTrackingLogger?.StopLogging();
+
     }
 
 
-    public void ReportSnap(bool isFlipped, float cycleTime, string buttonPressed, string chipStatus, bool decisionCorrect)
+    public void ReportSnap(bool isFlipped, string buttonPressed, string chipStatus, bool decisionCorrect)
     {
         structureCount++;
         if (partsLogger != null)
         {
-            partsLogger.LogSnap(structureCount, isFlipped, cycleTime, timeRemainingInSeconds, buttonPressed, chipStatus, decisionCorrect);
+            partsLogger.LogSnap(structureCount, isFlipped, timeRemainingInSeconds, buttonPressed, chipStatus, decisionCorrect);
         }
     }
 

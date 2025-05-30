@@ -9,6 +9,7 @@ public class SnapParts : MonoBehaviour
     [HideInInspector] public bool snapped = false;
     public AudioClip popSound;
     private AudioSource audioSource;
+    public bool isFlipped = false;
 
     private void Start()
     {
@@ -38,7 +39,7 @@ public class SnapParts : MonoBehaviour
 
             // Choose the closer rotation
             Quaternion chosenRotation = (angleToRot1 <= angleToRot2) ? snapRot1 : snapRot2;
-            bool isFlipped = (chosenRotation == snapRot2);
+            isFlipped = (chosenRotation == snapRot2);
 
             // Apply chosen rotation
             male.transform.rotation = chosenRotation;
@@ -65,7 +66,7 @@ public class SnapParts : MonoBehaviour
             if (rb != null)
             {
                 Destroy(rb); // We'll add it back later in MoveIKTarget
-                Debug.Log("[SnapParts] Removed Rigidbody from key.");
+             //   Debug.Log("[SnapParts] Removed Rigidbody from key.");
             }
 
 

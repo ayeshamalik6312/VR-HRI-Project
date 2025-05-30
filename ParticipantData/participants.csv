@@ -1,2 +1,6 @@
 ID,ConditionOrder
-12,Continuous Aug. -> Baseline -> Aug. on Prompt
+33,Baseline -> Aug. on Prompt -> Continuous Aug.
+44,Baseline -> Aug. on Prompt -> Continuous Aug.
+12,Baseline -> Aug. on Prompt -> Continuous Aug.
+36,Baseline -> Aug. on Prompt -> Continuous Aug.
+666,Aug. on Prompt -> Continuous Aug. -> Baseline

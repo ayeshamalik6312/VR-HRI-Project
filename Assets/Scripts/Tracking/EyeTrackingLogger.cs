@@ -15,6 +15,8 @@ public class EyeTrackingLogger : MonoBehaviour
 
     void Start()
     {
+        enabled = false;
+
         leftEye = GetComponentInChildren<OVREyeGaze>(true);
         rightEye = GetComponentInChildren<OVREyeGaze>(true);
 
@@ -39,6 +41,24 @@ public class EyeTrackingLogger : MonoBehaviour
 
             currentObject = lookedAt;
             gazeStartTime = now;
+        }
+    }
+    public void StartLogging(string filePath)
+    {
+        logFilePath = filePath;
+        gazeStartTime = Time.time;
+        File.WriteAllText(logFilePath, "Timestamp,ObjectLookedAt,GazeDuration\n");
+        enabled = true;
+    }
+
+    public void StopLogging()
+    {
+        enabled = false;
+
+        if (currentObject != "None")
+        {
+            float duration = Time.time - gazeStartTime;
+            File.AppendAllText(logFilePath, $"{Time.time:F2},{currentObject},{duration:F2}\n");
         }
     }
 
